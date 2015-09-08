@@ -126,7 +126,7 @@ $(function() {
 						// .addClass('dropdown')
 						.attr({
 							id : 'dropdown',
-							style : 'color:blue;width:100%;border-width:1px;'
+							style : 'color:grey;width:100%;border-width:1px;'
 						})
 						.appendTo('#result');
 
@@ -134,7 +134,7 @@ $(function() {
 						// .addClass('dropdown-menu')
 						.attr({
 							id : 'dropdown-menu',
-							style : 'background-color:yellow;border-width:1px;border-style:solid;'
+							style : 'background-color:#fff0e3;border-width:1px;border-style:solid;'
 						})
 						.appendTo('#dropdown');
 
@@ -176,7 +176,7 @@ $(function() {
 			$('#' + id).hover(function () {
 				// change color of target
 				var mugo = $(this)
-				mugo.attr('style', 'background-color:grey;');
+				mugo.attr('style', 'background-color:#EE7AE9;');
 				// update input
 				$('#school').val(mugo.text());
 			});
@@ -184,12 +184,12 @@ $(function() {
 			$('#' + id).mouseleave(function () {
 				// change color of target
 				var mugo = $(this)
-				mugo.attr('style', 'background-color:yellow;');
+				mugo.attr('style', 'background-color:#fff0e3;');
 			});			
 
 			$('#' + id).click(function() {
 				var mugo = $(this)
-				mugo.attr('style', 'background-color:purple;');
+				mugo.attr('style', 'background-color:#EE7AE9;');
 				// update input
 				$('#school').val(mugo.text());
 				// collapse the dropdown
