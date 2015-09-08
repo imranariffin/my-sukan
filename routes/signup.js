@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 var User = require('../schemas/user');
+var School = require('../schemas/school');
 
 /* password hasher for much security */
 var bcrypt = require('bcryptjs');
@@ -24,20 +25,33 @@ function signupPOST (req, res, next) {
 	var salt = bcrypt.genSaltSync(10);
 	var password = bcrypt.hashSync(req.body.password, salt);
 
-	var newUser = new User ({
-		/* BASIC INFORMATION */
-		firstName : req.body.firstName,
-		lastName : req.body.lastName,
-		email : req.body.email,
+	// find school id with the exact name from request
+	School.findOne({name : req.body.school}, function (err, school) {
+		if (err)
+			res.send(err);
+		else {
+			var newUser = new User ({
+				/* BASIC INFORMATION */
+				firstName : req.body.firstName,
+				lastName : req.body.lastName,
+				email : req.body.email,
 
-		/* OAuth */
-		password : password,
+				/* OAuth */
+				password : password,
 
-		/* FUNCTIONAL INFORMATION */
-		// list of sports id
-		sports : [],
-		// schoold id
-		school : req.body.schoolId,
+				/* FUNCTIONAL INFORMATION */
+				// list of sports id
+				sports : [],
+				// schoold id
+				school : school._id
+
+			}).save(function (err) {
+				if (err)
+					res.send(err);
+				else
+					res.send('SUCCESS: save user on signup');
+			});
+		}
 	});
 }
 

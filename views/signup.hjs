@@ -12,7 +12,7 @@
 	<div id="main-div" style="width:65%;position:relative;left:17.5%;">    
 		<form action="signup" method="POST">
 		    <!-- csrf for security -->
-        	<input type="hidden" name="_csrf" value="crsfToken">
+        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
 
 			<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;">
 			  <div class="panel-heading">
@@ -83,7 +83,7 @@
 $(function() {
 
 	// GET list of universities that match keyWords
-	$('#school').keypress(function () {
+	$('#school').keyup(function () {
 
 		var keyWords = '';
 		keyWords = $('#school').val();
@@ -92,7 +92,7 @@ $(function() {
 		console.log('keyWords:');
 		console.log(keyWords);
 
-		if (keyWords.length >= 2) {
+		if (keyWords.length >= 0) {
 
 			$.ajax({
 				type : 'GET',
@@ -105,15 +105,48 @@ $(function() {
 					console.log('response:');
 					console.log(response);
 
-					var universities = '';
+					if (response.length > 7)
+						response = response.slice(0, 7);
+
+					var schools = '';
 					for (i in response) {
 						if (i != response.length - 1)
-							universities += response[i]['University of Andorra'] + ', ';
+							schools += response[i].name + ', ';
 						else
-							universities += response[i]['University of Andorra'];
+							schools += response[i].name;
 					}
 
-					$('#result').text(universities);
+					// $('#result').text(schools);
+
+					$('#result').text('');
+
+					// instead of text,
+					// use jquery object to create dropdowns
+					$('<div/>')
+						// .addClass('dropdown')
+						.attr({
+							id : 'dropdown',
+							style : 'color:blue;width:100%;border-width:1px;'
+						})
+						.appendTo('#result');
+
+					$('<div>')
+						// .addClass('dropdown-menu')
+						.attr({
+							id : 'dropdown-menu',
+							style : 'background-color:yellow;border-width:1px;border-style:solid;'
+						})
+						.appendTo('#dropdown');
+
+					for (i in response) {
+						var school = response[i];
+						$('<div>')
+							.appendTo('#dropdown-menu')
+							.attr({
+								id : 'dropdown-item-' + String(i)
+							})
+							.text(school.name);
+					}
 				},
 				error : function (err) {
 					console.log('/get-all-universities ERROR\n');
@@ -126,6 +159,73 @@ $(function() {
 		}
 
 	});
+
+
+	$('div').mouseover(function (event) {
+		var id = event.target.id;
+
+		console.log('INSIDE: DIV mouseenter');
+		console.log("id:");
+		console.log(id);
+
+		console.log("$('#' + id).attr('id'):");
+		console.log($('#' + id).attr('id'));
+
+		if ((id.indexOf('dropdown-item') != -1)) {
+
+			$('#' + id).hover(function () {
+				// change color of target
+				var mugo = $(this)
+				mugo.attr('style', 'background-color:grey;');
+				// update input
+				$('#school').val(mugo.text());
+			});
+
+			$('#' + id).mouseleave(function () {
+				// change color of target
+				var mugo = $(this)
+				mugo.attr('style', 'background-color:yellow;');
+			});			
+
+			$('#' + id).click(function() {
+				var mugo = $(this)
+				mugo.attr('style', 'background-color:purple;');
+				// update input
+				$('#school').val(mugo.text());
+				// collapse the dropdown
+				$('#dropdown-menu').remove();
+			});
+
+			// // change color of target
+			// $('#' + id).attr('style', 'background-color:grey;');
+		} 
+
+		// else if (id.indexOf('dropdown-item') != -1) {
+		// 	// change back to original
+		// 	$('#' + id).attr('style', 'background-color:yellow;');
+		// }
+	});
+
+	// $('div').mouseleave(function (event) {
+	// 	var id = event.target.id;
+
+	// 	console.log('INSIDE: DIV mouseleave');
+	// 	console.log("id:");
+	// 	console.log(id);
+
+	// 	console.log("$('#' + id).attr('id'):");
+	// 	console.log($('#' + id).attr('id'));
+
+	// 	if ((id.indexOf('dropdown-item') != -1)) {
+	// 		// change color of target
+	// 		$('#' + id).attr('style', 'background-color:grey;');
+	// 	} 
+	// 	// else if (id.indexOf('dropdown-item') != -1) {
+	// 	// 	// change back to original
+	// 	// 	$('#' + id).attr('style', 'background-color:yellow;');
+	// 	// }
+	// });
+
 });
 
 </script>
