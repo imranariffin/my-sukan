@@ -16,4 +16,7 @@ router.get('/get-all-universities', getAllUniversities);
 /* GET: user signup */
 router.get('/signup', signup.GET);
 
+/* POST: user signup */
+router.post('/signup', signup.validateForm, signup.POST);
+
 module.exports = router;

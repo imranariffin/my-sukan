@@ -1,1 +1,6 @@
 body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}
+
+.signup {
+	background-image: url("/images/full-screen-bg.png");
+	background-position: left top;
+}
