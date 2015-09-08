@@ -12,8 +12,12 @@ var admin = require('./routes/admin');
 
 var app = express();
 
-// connect to mongoDB
-var MONGO_URI = require('./auth/mongo');
+// // connect to mongoDB
+// var MONGO_URI = require('./auth/mongo');
+
+// heroku push
+var MONGO_URI = 'mongodb://heroku_g5mt3vlr:t2vd6lr3ua0gkb13hll8cebbp5@ds041583.mongolab.com:41583/heroku_g5mt3vlr';
+
 mongoose.connect(MONGO_URI, function (err) {
   if (!err)
     console.log('MONGO CONNECT SUCCESS');
