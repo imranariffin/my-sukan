@@ -1185,7 +1185,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
@@ -3017,7 +3017,7 @@ select[multiple].input-lg {
           user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .btn:focus,
 .btn:active:focus,
@@ -3184,72 +3184,6 @@ fieldset[disabled] .btn-primary.active {
   border-color: #2e6da4;
 }
 .btn-primary .badge {
-  color: #337ab7;
-  background-color: #fff;
-}
-.btn-signup {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup:focus,
-.btn-signup.focus {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup:hover {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup:active,
-.btn-signup.active,
-.open > .dropdown-toggle.btn-signup {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup:active:hover,
-.btn-signup.active:hover,
-.open > .dropdown-toggle.btn-signup:hover,
-.btn-signup:active:focus,
-.btn-signup.active:focus,
-.open > .dropdown-toggle.btn-signup:focus,
-.btn-signup:active.focus,
-.btn-signup.active.focus,
-.open > .dropdown-toggle.btn-signup.focus {
-  color: #fff;
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup:active,
-.btn-signup.active,
-.open > .dropdown-toggle.btn-signup {
-  background-image: none;
-}
-.btn-signup.disabled,
-.btn-signup[disabled],
-fieldset[disabled] .btn-signup,
-.btn-signup.disabled:hover,
-.btn-signup[disabled]:hover,
-fieldset[disabled] .btn-signup:hover,
-.btn-signup.disabled:focus,
-.btn-signup[disabled]:focus,
-fieldset[disabled] .btn-signup:focus,
-.btn-signup.disabled.focus,
-.btn-signup[disabled].focus,
-fieldset[disabled] .btn-signup.focus,
-.btn-signup.disabled:active,
-.btn-signup[disabled]:active,
-fieldset[disabled] .btn-signup:active,
-.btn-signup.disabled.active,
-.btn-signup[disabled].active,
-fieldset[disabled] .btn-signup.active {
-  background-color: transparent;
-  border-color: transparent;
-}
-.btn-signup .badge {
   color: #337ab7;
   background-color: #fff;
 }
@@ -4282,6 +4216,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 4px;
+  }
 }
 @media (min-width: 768px) {
   .navbar-header {

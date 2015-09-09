@@ -196,35 +196,13 @@ $(function() {
 				$('#dropdown-menu').remove();
 			});
 
-			// // change color of target
-			// $('#' + id).attr('style', 'background-color:grey;');
+			$('body').click(function() {
+				// collapse if clicked not on dropdown
+				$('#dropdown-menu').remove();
+			});
 		} 
-
-		// else if (id.indexOf('dropdown-item') != -1) {
-		// 	// change back to original
-		// 	$('#' + id).attr('style', 'background-color:yellow;');
-		// }
 	});
 
-	// $('div').mouseleave(function (event) {
-	// 	var id = event.target.id;
-
-	// 	console.log('INSIDE: DIV mouseleave');
-	// 	console.log("id:");
-	// 	console.log(id);
-
-	// 	console.log("$('#' + id).attr('id'):");
-	// 	console.log($('#' + id).attr('id'));
-
-	// 	if ((id.indexOf('dropdown-item') != -1)) {
-	// 		// change color of target
-	// 		$('#' + id).attr('style', 'background-color:grey;');
-	// 	} 
-	// 	// else if (id.indexOf('dropdown-item') != -1) {
-	// 	// 	// change back to original
-	// 	// 	$('#' + id).attr('style', 'background-color:yellow;');
-	// 	// }
-	// });
 
 });
 

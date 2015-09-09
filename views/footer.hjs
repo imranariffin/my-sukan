@@ -1,0 +1,39 @@
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript">
+$(function () {
+  $(window).scrollTo($('#three'), {
+      offset: $(window).height()*3,
+      // offset: 1000,
+      duration: 1500
+  });
+
+  var width = $(window).width();
+  var height = $(window).height();
+  $('body').css({
+    'margin' : 0,
+    'width' : width,
+    'padding' : 0,
+  });
+  $('.section').css({
+    'width': 'inherit',
+    'margin' : 0,
+    'height' : height*1.2
+    // 'background-image' : "url('/images/stadium.png')"
+  });
+  // $('.section').css('margin', 0);
+  // $('.section').css('oveflow', 'hidden');
+
+  $('a').mouseover(function () {
+    $(this).css('color', 'purple');
+  });
+  $('a').mouseleave(function () {
+    $(this).css('color', 'white');
+  })
+
+});
+    </script>
+
+  </body>
+</html>

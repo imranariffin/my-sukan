@@ -8,7 +8,7 @@ var fs = require('fs');
 // db
 var School = require('../schemas/school');
 var User = require('../schemas/user');
-
+var Game = require('../schemas/game');
 // // router middlewares
 // var updateSchools = require('./updateSchools');
 
@@ -42,6 +42,17 @@ router.get('/users', function (req, res, next) {
 		});
 });
 
+/* GET: admin views all users */
+router.get('/games', function (req, res, next) {
+	Game.find({})
+		.exec(function (err, games) {
+			if (err)
+				res.send(err);
+			else
+				res.send(games);
+		});
+});
+
 /* DELETE: admin removes a school by id */
 router.get('/delete-school/:schoolId', function (req, res, next) {
 	var schoolId = req.params.schoolId;
@@ -56,6 +67,12 @@ router.get('/delete-school/:schoolId', function (req, res, next) {
 
 /* POST: update schools to DB from csv file */
 router.post('/update-schools', updateSchools);
+
+// /* GET: admins adds a sport using a form */
+// router.get('/add-sport', addSport.GET);
+
+// /* POST: admin adds a sport */
+// router.post('/add-sport', addSport.POST);
 
 module.exports = router;
 
@@ -87,3 +104,16 @@ function updateSchools (req, res, next) {
 	// read from file
 	fileStream.pipe(converter);
 }
+
+
+// var addSport = {
+// 	GET : function (req, res, next) {
+
+// 		res.render({
+// 			title : 'Admin - add sport'
+// 		});
+// 	},
+// 	POST : function (req, res, next) {
+// 		// 
+// 	}
+// };
