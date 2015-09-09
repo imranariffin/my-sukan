@@ -7,7 +7,12 @@ var signup = require('./signup');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('header', { title: 'My Sukan 2016' });
+  res.render('scroll-to', { 
+  	partials : {
+  		header : 'header',
+  		footer : 'footer'
+  	}
+   });
 });
 
 /* GET: list of all Canadian universities from CSV */

@@ -14,7 +14,12 @@ exports.validateForm = validateForm;
 
 function signupGET (req, res, next) {
 	res.render('signup', {
-		title : 'Signup'
+		title : 'Signup',
+		partials : {
+			header : 'header',
+			footer : 'footer-signup'
+		},
+		isSignupPage : true
 	});
 }
 

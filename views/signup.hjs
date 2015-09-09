@@ -1,209 +1,75 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
-  </head>
-  <body class="signup">
-  	<p style="font-size:65px;text-align:center;color:purple;">MySukan2016: Ready For Much Action?</p>
-  	<br>
 
-	<div id="main-div" style="width:65%;position:relative;left:17.5%;">    
-		<form action="signup" method="POST">
-		    <!-- csrf for security -->
-        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2016: Ready For Much Action?</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+			<form action="signup" method="POST">
+			    <!-- csrf for security -->
+	        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
 
-			<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;">
-			  <div class="panel-heading">
-				<span style="width:70%;left:15%;"> Join Us Now!</span>
-			  </div>
-			  <div class="panel-body">
-			  	<!-- user email -->
-	            <div class="input-group" style="width:70%;left:15%">
-	              <span class="input-group-addon" id="basic-addon1">@</span>
-	              <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
-	            </div>
-	            <br>
-	            <!-- user first name --> 
-				<div class="input-group" style="width:70%;left:15%;">
-					<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
-					<input name="firstName" type="text" class="form-control" placeholder="first name" aria-describedby="sizing-addon2">	
-				</div>
-				<br>
-	            <!-- user last name -->
-				<div class="input-group" style="width:70%;left:15%;">
-					<!-- <span class="input-group-addon" id="basic-addon1"> LN </span> -->
-					<input name="lastName" type="text" class="form-control" placeholder="last name" aria-describedby="sizing-addon2">	
-				</div>
-				<br>
-				<!-- user university -->
-				<div class="input-group" style="width:70%;left:15%;">
-					<!-- <span class="input-group-addon" id="basic-addon1">	</span> -->
-					<input name="school" id="school" type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon2">
+				<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;opacity:0.85;">
+				  <div class="panel-heading">
+					<span style="width:70%;left:15%;"> Join Us Now!</span>
+				  </div>
+				  <div class="panel-body" style="opacity:1;">
+				  	<!-- user email -->
+		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
+		              <span class="input-group-addon" id="basic-addon1">@</span>
+		              <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+		            </div>
+		            <br>
+		            <!-- user first name --> 
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
+						<input name="firstName" type="text" class="form-control" placeholder="first name" aria-describedby="sizing-addon2">	
+					</div>
 					<br>
-					<input name="schoolId" id="schoolId" type="hidden" value="{{schoolId}}">
-				    <div class="result" id="result">
-				    </div>
-				</div>
-				<br>
-				<!-- user password -->
-				<div class="input-group" style="width:70%;left:15%;">
-					<span class="input-group-addon" id="basic-addon1">***</span>
-					<input name="password" id="password" type="password" class="form-control" placeholder="password" aria-describedby="sizing-addon2">
+		            <!-- user last name -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1"> LN </span> -->
+						<input name="lastName" type="text" class="form-control" placeholder="last name" aria-describedby="sizing-addon2">	
+					</div>
 					<br>
-				    <div class="result" id="result">
-				    </div>
-				</div>
-				<br>
-				<!-- user confirm password -->
-				<div class="input-group" style="width:70%;left:15%;">
-					<span class="input-group-addon" id="basic-addon1">***</span>
-					<input name="confirmPassword" id="confirm-password" type="password" class="form-control" placeholder="confirm password" aria-describedby="sizing-addon2">
+					<!-- user university -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">	</span> -->
+						<input name="school" id="school" type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon2">
+						<br>
+						<input name="schoolId" id="schoolId" type="hidden" value="{{schoolId}}">
+					    <div class="result" id="result">
+					    </div>
+					</div>
 					<br>
-				    <div class="result" id="result">
+					<!-- user password -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<span class="input-group-addon" id="basic-addon1">***</span>
+						<input name="password" id="password" type="password" class="form-control" placeholder="password" aria-describedby="sizing-addon2">
+						<br>
+					    <div class="result" id="result">
+					    </div>
+					</div>
+					<br>
+					<!-- user confirm password -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<span class="input-group-addon" id="basic-addon1">***</span>
+						<input name="confirmPassword" id="confirm-password" type="password" class="form-control" placeholder="confirm password" aria-describedby="sizing-addon2">
+						<br>
+					    <div class="result" id="result">
+					    </div>
+					</div>
+					<br>
+					<div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	<input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!">
 				    </div>
+				  </div>
 				</div>
-				<br>
-				<div class="input-group" style="width:50%;left:37.5%;">
-			    	<br>
-			    	<input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!">
-			    </div>
-			  </div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
-  </body>
-</html>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type="text/javascript">
-
-// sign up
-$(function() {
-
-	// GET list of universities that match keyWords
-	$('#school').keyup(function () {
-
-		var keyWords = '';
-		keyWords = $('#school').val();
-
-		// TEST
-		console.log('keyWords:');
-		console.log(keyWords);
-
-		if (keyWords.length >= 0) {
-
-			$.ajax({
-				type : 'GET',
-				url : '/get-all-universities',
-				data : {
-					'keyWords' : keyWords
-				},
-				success : function (response) {
-					console.log('/get-all-universities SUCCESS\n');
-					console.log('response:');
-					console.log(response);
-
-					if (response.length > 7)
-						response = response.slice(0, 7);
-
-					var schools = '';
-					for (i in response) {
-						if (i != response.length - 1)
-							schools += response[i].name + ', ';
-						else
-							schools += response[i].name;
-					}
-
-					// $('#result').text(schools);
-
-					$('#result').text('');
-
-					// instead of text,
-					// use jquery object to create dropdowns
-					$('<div/>')
-						// .addClass('dropdown')
-						.attr({
-							id : 'dropdown',
-							style : 'color:grey;width:100%;border-width:1px;'
-						})
-						.appendTo('#result');
-
-					$('<div>')
-						// .addClass('dropdown-menu')
-						.attr({
-							id : 'dropdown-menu',
-							style : 'background-color:#fff0e3;border-width:1px;border-style:solid;'
-						})
-						.appendTo('#dropdown');
-
-					for (i in response) {
-						var school = response[i];
-						$('<div>')
-							.appendTo('#dropdown-menu')
-							.attr({
-								id : 'dropdown-item-' + String(i)
-							})
-							.text(school.name);
-					}
-				},
-				error : function (err) {
-					console.log('/get-all-universities ERROR\n');
-					console.log('err:');
-					console.log(err);
-				},
-				dataType : 'json'
-			});
-
-		}
-
-	});
+{{>footer}}
 
 
-	$('div').mouseover(function (event) {
-		var id = event.target.id;
-
-		console.log('INSIDE: DIV mouseenter');
-		console.log("id:");
-		console.log(id);
-
-		console.log("$('#' + id).attr('id'):");
-		console.log($('#' + id).attr('id'));
-
-		if ((id.indexOf('dropdown-item') != -1)) {
-
-			$('#' + id).hover(function () {
-				// change color of target
-				var mugo = $(this)
-				mugo.attr('style', 'background-color:#EE7AE9;');
-				// update input
-				$('#school').val(mugo.text());
-			});
-
-			$('#' + id).mouseleave(function () {
-				// change color of target
-				var mugo = $(this)
-				mugo.attr('style', 'background-color:#fff0e3;');
-			});			
-
-			$('#' + id).click(function() {
-				var mugo = $(this)
-				mugo.attr('style', 'background-color:#EE7AE9;');
-				// update input
-				$('#school').val(mugo.text());
-				// collapse the dropdown
-				$('#dropdown-menu').remove();
-			});
-
-			$('body').click(function() {
-				// collapse if clicked not on dropdown
-				$('#dropdown-menu').remove();
-			});
-		} 
-	});
-
-
-});
-
-</script>
