@@ -35,7 +35,7 @@
   </div>
 </section>
 <!-- volunteers -->
-<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/padang.jpg');background-size:cover;">
+<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/padang.JPG');background-size:cover;">
   <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/volunteers" style="color:white;text-decoration:none;">Volunteers</a>
     <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
       <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
