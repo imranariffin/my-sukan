@@ -1,0 +1,13 @@
+
+    <!-- import foreign scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+
+    <!-- transfer variable from server -->
+    <!-- <input id="is-signup-page" name="isSignupPage" type="hidden" value="{{isSignupPage}}"> -->
+
+    <!-- import local jquery scripts -->
+    <script type="text/javascript" src="/javascripts/footer-create-game.js"></script>
+
+  </body>
+</html>

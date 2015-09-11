@@ -11,13 +11,16 @@ var User = mongoose.model('User', new Schema ({
 	// url of profile photo
 	photo : {type : String, default : ""},
 	id : ObjectId,
+	// user types
+	isVolunteer : {type : Boolean, default : false},
+	isAdmin : {type : Boolean, default : false},
 
 	/* OAuth */
 	password : String,
 
 	/* FUNCTIONAL INFORMATION */
 	// list of sports id
-	sports : [String],
+	games : [String],
 	// schoold id
 	school : String,
 

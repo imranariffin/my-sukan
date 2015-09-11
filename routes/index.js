@@ -4,6 +4,7 @@ var router = express.Router();
 /* ROUTES IMPORT */
 var getAllUniversities = require('./get-all-universities');
 var signup = require('./signup');
+var games = require('./games');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -34,6 +35,12 @@ router.post('/signup', signup.validateForm, signup.POST);
 	GET /scoreboard -- shows current scores of all games	
 */
 
+/* GET page to enrol in games */
+router.get('/enrol', enrolGET);
+
+/* GET page to view details of all games */
+router.get('/games', games.GET);
+
 /*TEST $.scrollTo */
 
 router.get('/scroll-to', scrollTo);
@@ -49,3 +56,14 @@ function scrollTo (req, res) {
 }
 
 module.exports = router;
+
+/* ROUTE callback functions */
+function enrolGET (req, res, next) {
+	res.render('enrol', {
+		title : 'enrol',
+		partials : {
+			header : 'header',
+			footer : 'footer'
+		}
+	});
+}

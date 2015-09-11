@@ -9,6 +9,16 @@ var Game = mongoose.model('Game	', new Schema ({
 	categories: [String],
 	venues : Object,
 
+	location : String,
+	// timetable: [Date?]
+	timetable : Object,
+
+	mainRule : String,
+	rules : [String],
+
+	// strings correspond to id's of users who are volunteers
+	volunteers : [String]
+
 }));
 
 module.exports = Game;

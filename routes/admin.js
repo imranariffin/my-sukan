@@ -53,6 +53,12 @@ router.get('/games', function (req, res, next) {
 		});
 });
 
+/* admin creates a game. will see forms */
+router.get('/create-game', createGameGET);
+
+/* admin creates a game. submit the created game */
+router.post('/create-game', createGamePOST);
+
 /* DELETE: admin removes a school by id */
 router.get('/delete-school/:schoolId', function (req, res, next) {
 	var schoolId = req.params.schoolId;
@@ -105,6 +111,19 @@ function updateSchools (req, res, next) {
 	fileStream.pipe(converter);
 }
 
+function createGameGET (req, res, next) {
+	res.render('create-game', {
+		title : 'Admin - create game',
+		partials : {
+			header : 'header-signup',
+			footer : 'footer-create-game'
+		}
+	});
+}
+
+function createGamePOST (req, res, next) {
+	res.send(req.body);
+}
 
 // var addSport = {
 // 	GET : function (req, res, next) {

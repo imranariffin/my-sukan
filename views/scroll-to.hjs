@@ -25,21 +25,26 @@
   </div>
 </section>
 <section class="section" id="section-3" style="width:100%;background-color:grey;background-image:url('/images/stadium-2.jpg');background-size:cover;">
-  <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/signup" style="color:white;text-decoration:none;">Sign Up Now</a>
-<!--     <button type="button" class="btn btn-default" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;">
-      <span class="glyphicon glyphicon-chevron-down"></span>
-    </button> -->
-    <button id="nav-btn-3" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
-      <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
-    </button>
+  <div style="heightL100%;">
+    <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/signup" style="color:white;text-decoration:none;">Sign Up Now</a>
+  <!--     <button type="button" class="btn btn-default" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button> -->
+      <button id="nav-btn-3" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+        <span id="nav-glyph-3" class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+    </div>
   </div>
 </section>
 <!-- volunteers -->
 <section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/padang.JPG');background-size:cover;">
-  <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/volunteers" style="color:white;text-decoration:none;">Volunteers</a>
-    <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
-      <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
-    </button>
+  <div style="height:100%;">
+    <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/volunteers" style="color:white;text-decoration:none;">Volunteers</a>
+
+      <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+        <span id="nav-glyph-4" class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+    </div>
   </div>
 </section>
 <!-- sponsors -->

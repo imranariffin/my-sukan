@@ -1,0 +1,68 @@
+
+ {{>header}}
+
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+			<form action="/admin/create-game" method="POST">
+			    <!-- csrf for security -->
+	        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
+
+				<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;opacity:0.85;">
+				  <div class="panel-heading">
+					<span style="width:70%;left:15%;"> Create A Game</span>
+				  </div>
+				  <div class="panel-body" style="opacity:1;">
+				  	<!-- Game Name -->
+		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
+		              <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+		              <input name="name" type="text" class="form-control" placeholder="Game Name" aria-describedby="basic-addon1">
+		            </div>
+		            <br>
+		            <!-- Game Venue --> 
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
+						<input name="venue" type="text" class="form-control" placeholder="Game Venue" aria-describedby="sizing-addon2">	
+					</div>
+					<br>
+		            <!-- Game Rules -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1"> LN </span> -->
+						<textarea name="rules" type="text" class="form-control" placeholder="Game Rules" aria-describedby="sizing-addon2"></textarea>
+					</div>
+					<br>
+					<!-- start and end times -->
+					<div id="time-input-base" class="input-group" style="width:70%;left:15%;">
+						<span class="input-group-addon" id="basic-addon1"> Times: </span>
+
+						<!-- dynamic -->
+						<div id="div-time-input-1" class="div-time-input">
+							<span> From </span>
+							<input name="starttimes" id="starttime-1" type="time" class="form-control time-input" placeholder="start time" aria-describedby="sizing-addon2">
+							<br><span> to </span>
+							<input name="endtimes" id="endtime-1" type="time" class="form-control time-input" placeholder="end time" aria-describedby="sizing-addon2">
+							<br><br><hr>
+					    </div>
+					</div>
+				    <div class="input-group" id="add-more-time" style="width:70%;left:15%;">
+				    	<span> add more time </span>
+				    	<span class="glyphicon glyphicon-plus-sign"></span>
+				    </div>
+					<br>
+
+					<div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	<input class="btn btn-default" style="width:inherit;" type="submit" value="create game!">
+				    </div>
+				    <br>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{{>footer}}
+
+

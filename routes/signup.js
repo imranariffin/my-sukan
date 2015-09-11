@@ -12,11 +12,13 @@ exports.GET = signupGET;
 exports.POST = signupPOST;
 exports.validateForm = validateForm;
 
+/* CALLBACK function definitions */
+
 function signupGET (req, res, next) {
 	res.render('signup', {
 		title : 'Signup',
 		partials : {
-			header : 'header',
+			header : 'header-signup',
 			footer : 'footer-signup'
 		},
 		isSignupPage : true
@@ -35,11 +37,20 @@ function signupPOST (req, res, next) {
 		if (err)
 			res.send(err);
 		else {
+
+			// check if user wants to be volunteer
+			var isVolunteer = req.body.becomeVolunteer;
+			if (isVolunteer === 'on')
+				isVolunteer = true;
+			else
+				isVolunteer = false;
+
 			var newUser = new User ({
 				/* BASIC INFORMATION */
 				firstName : req.body.firstName,
 				lastName : req.body.lastName,
 				email : req.body.email,
+				isVolunteer : isVolunteer,
 
 				/* OAuth */
 				password : password,
@@ -106,3 +117,5 @@ function validateForm (req, res, next) {
 	// // everything is good. proceed to post form to db
 	// next();
 }
+
+/* HELPER functions definitions */

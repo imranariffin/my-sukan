@@ -59,7 +59,13 @@
 					    <div class="result" id="result">
 					    </div>
 					</div>
-					<br>
+					<!-- become a volunteer! -->
+					<div class="input-group" style="width:70%;left:15%;">
+					      <input type="checkbox" name="becomeVolunteer">
+					      <span>become a volunteer!</span>
+					      <!-- <input type="text" aria-label="..." value="become a volunteer!" > -->
+					    </div><!-- /input-group -->
+
 					<div class="input-group" style="width:50%;left:37.5%;">
 				    	<br>
 				    	<input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!">
