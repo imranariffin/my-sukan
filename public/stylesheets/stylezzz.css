@@ -32,3 +32,31 @@
 	left: 5%;
 	position: relative;
 }
+
+.big-text {
+	color:grey;
+	font-family:Impact;
+	font-size:110px;
+	text-align:center;
+}
+
+.big-text-sm {
+	color:white;
+	font-family:Impact;
+	font-size:25px;
+	text-align:center;	
+}
+
+.big-a {
+	color:white;
+	text-decoration:none;
+}	
+
+.tnav .navbar .container { height: 28px; }
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:10px !important; 
+    padding-bottom:0 !important;
+    height: 28px;
+}
+.navbar {min-height:28px !important;}

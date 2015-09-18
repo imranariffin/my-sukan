@@ -2,55 +2,64 @@
 
 <section style="height:5%;width:100%;background-color:yellow;">header</section>
 
-<section class="section" id="section-1" style="height:100%;width:inherit;background-color:grey;background-image:url('/images/teaser-crop.png');background-size:cover;">
-  <br><br>
+<section class="section" id="section-1" style="height:100%;width:inherit;background-color:grey;background-image:url('/images/B0-resize-2.png');background-size:cover;">
+  <br><br><br><br><br><br><br><br><br><br>
   <div style="height:100%;">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <!-- <div class="big-text" style="color:grey;font-size:30px;text-align:center;">MySukan 2015:</div> -->
-    <!-- <div class="big-text" style="color:purple;font-size:130px;text-align:center;">Ready For Much Win?</div> -->
+    <br><br><br><br><br><br><br>
+    <div class="big-text"><!-- MySukan Canada<br>2015 --></div>
+    <div class="big-text-sm"><!-- McMaster University | 10 October & 11 October 2015 | Saturday & Sunday --><br><br></div>
     <button id="nav-btn-1" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;background-color:grey;">
       <span id="nav-glyph-1" class="glyphicon glyphicon-chevron-down"></span>
     </button>
   </div>
 </section>
-<section class="section" id="section-2" style="width:100%;background-color:grey;background-image:url('/images/kasut.JPG');background-size:cover;">
+<section class="section" id="section-2" style="width:100%;background-color:grey;background-image:url('/images/B2.JPG');background-size:cover;">
   <div style="height:100%;">
-    <br><br><br><br><br>
-    <div class="big-text" style="color:purple;font-size:90px;text-align:center;">MySukan 2015</div>
     <br><br><br><br>
-    <div class="big-text" style="color:#830300;font-size:30px;text-align:center;">McMaster University | xx October 2015 | Monday</div>
+    <div class="big-text">
+      Participants/<br>
+      Volunteers<br>
+      <a class="big-a" href="/signup">
+      Signup Now!
+      </a>
+    </div>
+    <br><br>
+    <!-- <div class="big-text" style="color:#830300;font-size:30px;text-align:center;">Sign Up Now!</div> -->
     <button id="nav-btn-2" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
       <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
     </button>
   </div>
 </section>
-<section class="section" id="section-3" style="width:100%;background-color:grey;background-image:url('/images/stadium-2.jpg');background-size:cover;">
-  <div style="heightL100%;">
-    <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/signup" style="color:white;text-decoration:none;">Sign Up Now</a>
+<section class="section" id="section-3" style="width:100%;background-color:grey;background-image:url('/images/B3.JPG');background-size:cover;">
+  <div style="height:100%;">
+    <br><br><br><br><br><br>
+    <!-- style="height:100%;text-align:center;font-size:190px;color:white; -->
+    <div class="big-text"><br><a class="big-a" href="/games">Game On!</a>
   <!--     <button type="button" class="btn btn-default" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;">
         <span class="glyphicon glyphicon-chevron-down"></span>
       </button> -->
-      <button id="nav-btn-3" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
-        <span id="nav-glyph-3" class="glyphicon glyphicon-chevron-down"></span>
-      </button>
     </div>
+    <br><br>
+    <button id="nav-btn-3" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+        <span id="nav-glyph-3" class="glyphicon glyphicon-chevron-down"></span>
+    </button>
   </div>
 </section>
 <!-- volunteers -->
-<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/padang.JPG');background-size:cover;">
+<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/B4.png');background-size:cover;">
+  <br><br><br><br><br>
   <div style="height:100%;">
-    <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/volunteers" style="color:white;text-decoration:none;">Volunteers</a>
-
-      <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
-        <span id="nav-glyph-4" class="glyphicon glyphicon-chevron-down"></span>
-      </button>
+    <div class="big-text" ><br><a class="big-a" href="/volunteers">Credits</a>
     </div>
+    <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+      <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
+    </button>
   </div>
 </section>
 <!-- sponsors -->
 <section class="section" id="section-5" style="width:100%;background-color:grey;background-image:url('/images/uh.png');background-size:cover;">
   <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/sponsors" style="color:white;text-decoration:none;">Sponsors</a>
-<!--   <button id="nav-btn-5" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+  <!-- <button id="nav-btn-5" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
     <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
   </button> -->
   </div>

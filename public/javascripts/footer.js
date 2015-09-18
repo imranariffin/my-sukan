@@ -41,7 +41,10 @@ $(function () {
   //     });
 
   $('a').mouseover(function () {
-    $(this).css('color', 'purple');
+    $(this).css({
+      'color' : 'purple',
+      'text-decoration' : 'none'
+    });
   });
 
   $('a').mouseleave(function () {
@@ -49,7 +52,10 @@ $(function () {
   });
 
   $('.big-a').mouseleave(function () {
-    $(this).css('color', 'white');
+    $(this).css({
+      'color' : 'white', 
+      'text-decoration' : 'none'
+    });
   });
 
   $('.nav-a,.nav-btn').click(function (event) {
