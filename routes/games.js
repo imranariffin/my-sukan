@@ -14,12 +14,52 @@ exports.GET = gamesGET;
 /* CALLBACK function definitions */
 
 function gamesGET (req, res, next) {
-	res.render('games', {
-		title : 'Games',
-		isGamesPage : true,
-		partials : {
-			header : 'header-signup',
-			footer : 'footer-games'
-		}
-	});
+
+	var page = 'games';
+	var title = 'Games';
+
+	if (req.session.user) {
+		User.findOne({email : req.session.user.email}, function (err, user) {
+			if (err) {
+				res.send(err);
+			} else if (user) {
+				res.render(page, { 
+					user : user,
+					title : title,
+					isGamesPage : true,
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			} else {
+				res.render(page, { 
+					title : title,
+					isGamesPage : true,
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			}
+		});
+	} else {
+		res.render(page, { 
+			title : title,
+			isGamesPage : true,
+			partials : {
+				header : 'header',
+				footer : 'footer'
+			}
+		});
+	}
+
+	// res.render('games', {
+	// 	title : 'Games',
+	// 	isGamesPage : true,
+	// 	partials : {
+	// 		header : 'header',
+	// 		footer : 'footer'
+	// 	}
+	// });
 }

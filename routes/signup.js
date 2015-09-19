@@ -15,14 +15,54 @@ exports.validateForm = validateForm;
 /* CALLBACK function definitions */
 
 function signupGET (req, res, next) {
-	res.render('signup', {
-		title : 'Signup',
-		partials : {
-			header : 'header-signup',
-			footer : 'footer-signup'
-		},
-		isSignupPage : true
-	});
+
+	var page = 'signup';
+	var title = 'Signup';
+
+	if (req.session.user) {
+		User.findOne({email : req.session.user.email}, function (err, user) {
+			if (err) {
+				res.send(err);
+			} else if (user) {
+				res.render(page, { 
+					user : user,
+					title : title,
+					isSignupPage : true,
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			} else {
+				res.render(page, { 
+					title : title,
+					isSignupPage : true,
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			}
+		});
+	} else {
+		res.render(page, { 
+			title : title,
+			isSignupPage : true,
+			partials : {
+				header : 'header',
+				footer : 'footer'
+			}
+		});
+	}
+
+	// res.render('signup', {
+	// 	title : 'Signup',
+	// 	partials : {
+	// 		header : 'header',
+	// 		footer : 'footer'
+	// 	},
+	// 	isSignupPage : true
+	// });
 }
 
 function signupPOST (req, res, next) {

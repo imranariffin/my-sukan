@@ -17,12 +17,12 @@
 </section>
 <section class="section" id="section-2" style="width:100%;background-color:grey;background-image:url('/images/B1.png');background-size:cover;">
   <div style="height:100%;">
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="big-text">
-      <button id="nav-btn-2" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="width:25%;position:absolute;left:37.5%;bottom:0x;margin:0px;background-color:grey;font-size:20px;">
+      <button id="nav-btn-2" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="width:20%;position:absolute;left:40%;bottom:0x;margin:0px;background-color:grey;font-size:20px;">
 <!--         <div class="" style="font-size:30px;" id="nav-btn-2"> -->
           <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
-          Get Started
+          Scroll down to signup
           <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
         <!-- </div> -->
       </button>

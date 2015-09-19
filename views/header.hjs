@@ -52,9 +52,10 @@
             {{#user}}
             <li><img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">&nbsp</li>
             {{/user}}
-            <li class="active"><a class="nav-a" id="nav-1">welcome</a></li>
-            <li><a href="#" class="nav-a" id="nav-2">games</a></li>
-            <li><a href="#" class="nav-a" id="nav-3">ready?</a></li>
+            <!-- <li class="active"><a class="nav-a" id="nav-1">welcome</a></li> -->
+            <!-- <li><a href="#" class="nav-a" id="nav-2">games</a></li> -->
+            <!-- <li><a href="#" class="nav-a" id="nav-3">ready?</a></li> -->
+            <li><a href="/games">games</a></li>
             {{^user}}
             <li>
               <a href="/signup" class="nav-a" id="nav-4">
@@ -62,11 +63,22 @@
                 signup
               </a>
             </li>
+            <li>
+              <a href="/signin" class="nav-a" id="nav-4">
+                <!-- <img src="/images/fb-logo.png" style="height:20px;"> -->
+                signin
+              </a>
+            </li>
+            <li>
+              <a href="/auth/facebook" class="nav-a" id="nav-4">
+                <img src="/images/fb-login.png" style="height:23px;">
+                <!-- signin -->
+              </a>
+            </li>
             {{/user}}
             {{#user}}
             <li><a href="/logout" class="nav-a">logout</a></li>
             {{/user}}
-            <li><a>&nbsp&nbsp&nbsp</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

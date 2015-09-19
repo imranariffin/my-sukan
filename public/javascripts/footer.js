@@ -1,5 +1,25 @@
 $(function () {
 
+  /* 'import' required variable from HTML page */
+
+  var isSignupPage = $('#is-signup-page').val();
+  if (isSignupPage == 'true')
+    isSignupPage = true;
+  else
+    isSignupPage = false;
+
+  var isCreateGamePage = $('#is-create-game-page').val();
+  if (isCreateGamePage == 'true')
+    isCreateGamePage = true;
+  else
+    isCreateGamePage = false;
+
+  var isGamesPage = $('#is-games-page').val();
+  if (isGamesPage == 'true')
+    isGamesPage = true;
+  else
+    isGamesPage = false;
+
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
   console.log("typeof($('#section-3').height()):");
@@ -297,5 +317,134 @@ $(function () {
       });
     } 
   });
+
+
+  if (isSignupPage) {
+    console.log('activate signup nav-btn');
+    // $('#nav-'+String(goTo+1)).parent().siblings().removeClass('active');
+    // $('#nav-'+String(goTo+1)).parent().addClass('active');
+    $('.navbar-nav').children('li').removeClass('active');
+    $('#nav-4').parent('li').addClass('active');
+
+    console.log("$('#nav-').parent('li').attr('class')");
+    console.log($('#nav-4').parent('li').attr('class'));
+
+    $('body').css({
+      'margin' : 0,
+      'width' : width,
+      'padding' : 0,
+      'background-image' : "url('/images/stadium-crop.png')",
+      'background-size' : 'cover'
+    });
+
+  }
+
+  if (isCreateGamePage) {
+    // admin adds more time to input for a game
+    $('#add-more-time').click(function (event) {
+
+      console.log('clicked add more time');
+
+      // insert a new time input after the latest one
+      var nTimes = $('.time-input').size();
+      var lastTimeInput = $('.time-input').last();
+
+      console.log('lastTimeInput.val():');
+      console.log(lastTimeInput.val());
+      console.log('nTimes:');
+      console.log(nTimes);
+
+      // create base div
+      var nTimeDivs = $('.div-time-input').size();
+      var divTimeInput = $('<div/>').attr({
+        'id' : 'div-time-input-' + String(nTimeDivs),
+        'class' : 'div-time-input'
+      });
+      divTimeInput.appendTo('#time-input-base');
+
+      // create and append <span>from</span>
+      $('<span/>').text('From')
+      .appendTo(divTimeInput);
+      // create a new start time input
+      var starttime = $('<input/>').attr({
+        'name' : 'starttimes',
+        'id' : 'starttime-' + String(nTimes),
+        'type' : 'time',
+        'placeholder' : 'start time',
+        'aria-describedby' : 'sizing-addon2'
+      })
+      .addClass('form-control')
+      .addClass('time-input')
+      // append
+      .appendTo(divTimeInput);
+      // starttime.insertAfter(lastTimeInput);
+      // line break
+      $('<br>').appendTo(divTimeInput);
+      // $('<br>').insertAfter(lastTimeInput);
+      // create <span>to</span>
+      var to = $('<span/>').text('To');
+      // and append
+      to.appendTo(divTimeInput);
+      // create a new end time input
+      var endtime = $('<input/>').attr({
+        'name' : 'endtimes',
+        'id' : 'endtime-' + String(nTimes),
+        'type' : 'time',
+        'placeholder' : 'end time',
+        'aria-describedby' : 'sizing-addon2'
+      })
+      .addClass('form-control')
+      .addClass('time-input')
+      // append
+      .appendTo(divTimeInput);;
+      // // append
+      // endtime.insertAfter(to);
+      // line break and horizontal line
+      $('<hr>').insertAfter(
+        $('<br>').insertAfter(
+          $('<br>').appendTo(
+            divTimeInput
+      )));
+
+    });
+  }
+
+  if (isGamesPage) {
+    /* all /games specific codes should be here  */
+
+    $('.game-heading').click(function (event) {
+      var game = event.target.id;
+      game = game.slice('heading-'.length, game.length);
+      console.log('game:');
+      console.log(game);
+
+      // toggle show game body
+      ('#body-' + game).toggle();
+    });
+
+    $('.game-container').click(function (event) {
+      var game = event.target.id;
+      game = game.slice('heading-'.length, game.length);
+      console.log('game:');
+      console.log(game);
+
+      // toggle show game body
+      $('#body-' + game).toggle(400);
+    });    
+
+    $('.game-name').click(function (event) {
+      var game = event.target.id;
+      game = game.slice('game-name-'.length, game.length);
+
+      // toggle show game body
+      $('#body-' + game).toggle(400);
+    });    
+
+    $('.game-heading').mouseover(function (event) {
+      $(this).css({
+        'cursor' : 'pointer'
+      });
+    });
+  }
 
 });
