@@ -4,7 +4,7 @@
     <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
 
     <!-- transfer variable from server -->
-    <!-- <input id="is-signup-page" name="isSignupPage" type="hidden" value="{{isSignupPage}}"> -->
+    <input id="is-create-game-page" name="isCreateGamePage" type="hidden" value="{{isCreateGamePage}}">
 
     <!-- import local jquery scripts -->
     <script type="text/javascript" src="/javascripts/footer-create-game.js"></script>

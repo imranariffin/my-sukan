@@ -1,20 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+var User = require('../schemas/user');
+
 /* ROUTES IMPORT */
 var getAllUniversities = require('./get-all-universities');
 var signup = require('./signup');
 var games = require('./games');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('scroll-to', { 
-  	partials : {
-  		header : 'header',
-  		footer : 'footer'
-  	}
-   });
-});
+router.get('/', homeGET);
 
 /* GET: list of all Canadian universities from CSV */
 router.get('/get-all-universities', getAllUniversities);
@@ -24,6 +19,9 @@ router.get('/signup', signup.GET);
 
 /* POST: user signup */
 router.post('/signup', signup.validateForm, signup.POST);
+
+/* GET: user logs out */
+router.get('/logout', signout);
 
 // future routes
 /*
@@ -66,4 +64,53 @@ function enrolGET (req, res, next) {
 			footer : 'footer'
 		}
 	});
+}
+
+function homeGET (req, res, next) {
+
+	// res.send(req.session.user.email);
+
+	if (req.session.user) {
+		User.findOne({email : req.session.user.email}, function (err, user) {
+			if (err) {
+				res.send(err);
+			} else if (user) {
+				res.render('scroll-to', { 
+					user : user,
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			} else {
+				res.render('scroll-to', { 
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			}
+		});
+	} else {
+		res.render('scroll-to', { 
+			partials : {
+				header : 'header',
+				footer : 'footer'
+			}
+		});
+	}
+}
+
+function signout (req, res, next) {
+
+	req.session.reset();
+	req.user.reset();
+
+	// TEST
+	console.log('req.session:');
+	console.log(req.session);
+	console.log('req.user:');
+	console.log(req.user);
+
+	res.redirect('/');
 }

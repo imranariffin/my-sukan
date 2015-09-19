@@ -66,16 +66,29 @@
 					      <!-- <input type="text" aria-label="..." value="become a volunteer!" > -->
 					    </div><!-- /input-group -->
 
-					<div class="input-group" style="width:50%;left:37.5%;">
+					<div class="input-group" style="width:60%;left:20%;">
 				    	<br>
-				    	<input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!">
+				    	<!-- <input class="btn btn-default" style="width:100%;;" type="submit" value="I'm Ready!"> -->
+
+				    	<div style="width:45%;float:left;overflow:hidden;">
+				    		<input class="btn btn-default" style="width:100%;;" type="submit" value="Signup!">
+				    	</div>
+				    	<div style="text-align:center;width:10%;float:left;overflow:hidden;">
+				    		or
+				    	</div>
+				    	<div style="width:45%;overflow:hidden;overflow:hidden;">
+				    		<a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:105%;height:100%;" src="/images/fb-login.png"> </a>
+				    	</div>
+
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	
 				    </div>
 				    <div class="input-group" style="width:50%;left:37.5%;">
 				    	<br>
-				    	or 
+				    	<!-- or  -->
 				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
-				    	<a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a>
-				    	<br><br><br>
+				    	<!-- <a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a> -->
+				    	<!-- <br><br><br> -->
 				    </div>
 				  </div>
 				</div>

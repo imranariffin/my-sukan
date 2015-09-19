@@ -409,7 +409,7 @@ function redirectToMain (req, res) {
   console.log('active user email (req.session.passport.user.emails[0])');
   console.log(req.session.passport.user.emails[0]);
   console.log('how about req.user.emails[0]):');
-  console.log(req.user.emails[0]);
+  // console.log(req.user.emails[0]);
   // console.log('Or, how about req.user.emails):');
   // console.log(req.user.emails);
 

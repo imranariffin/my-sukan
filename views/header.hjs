@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <!-- css loads -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
     <link rel='stylesheet' href='/stylesheets/stylezzz.css' />
+    <link rel='stylesheet' href='/stylesheets/checkbox.css' />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
@@ -16,14 +20,16 @@
 <body>
 
 <!-- facebook like button ready -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1066568540042442";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<!-- <div id="fb-root"></div> -->
+<script>
+// (function(d, s, id) {
+//   var js, fjs = d.getElementsByTagName(s)[0];
+//   if (d.getElementById(id)) return;
+//   js = d.createElement(s); js.id = id;
+//   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1066568540042442";
+//   fjs.parentNode.insertBefore(js, fjs);
+// }(document, 'script', 'facebook-jssdk'));
+</script>
 
   <!-- <div class="navbar"> -->
     <nav class="navbar navbar-default navbar-fixed-top" style="height:5%;">
@@ -43,10 +49,23 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="height:20px;">
           <ul class="nav navbar-nav navbar-right">
+            {{#user}}
+            <li><img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">&nbsp</li>
+            {{/user}}
             <li class="active"><a class="nav-a" id="nav-1">welcome</a></li>
             <li><a href="#" class="nav-a" id="nav-2">games</a></li>
             <li><a href="#" class="nav-a" id="nav-3">ready?</a></li>
-            <li><a href="/signup" class="nav-a" id="nav-4">signup</a></li>
+            {{^user}}
+            <li>
+              <a href="/signup" class="nav-a" id="nav-4">
+                <img src="/images/fb-logo.png" style="height:20px;">
+                signup
+              </a>
+            </li>
+            {{/user}}
+            {{#user}}
+            <li><a href="/logout" class="nav-a">logout</a></li>
+            {{/user}}
             <li><a>&nbsp&nbsp&nbsp</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
