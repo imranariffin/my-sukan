@@ -65,14 +65,6 @@
   <br><br><br><br><br><br><br>
   <div class="big-text"><br><a class="big-a" href="/credits">Credits</a>
 
-    <div id="fb-root"></div>
-    <div class="fb-like" 
-        data-href="http://www.your-domain.com/your-page.html" 
-        data-layout="standard" 
-        data-action="like" 
-        data-show-faces="true">
-    </div>
-    
     </div>
   </div>
 </section>

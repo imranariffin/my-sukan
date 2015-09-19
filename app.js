@@ -5,6 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var sessions = require('client-sessions');
+
+// custom functions
+var configureSessions = require('./functions/configure-sessions');
+var setupPassport = require('./functions/setup-passport');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -25,6 +31,7 @@ mongoose.connect(MONGO_URI, function (err) {
     console.log(err);
 });
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
@@ -38,6 +45,11 @@ app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// setup passport
+configureSessions(app, sessions);
+setupPassport(app, passport);
+
+// main routes
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);

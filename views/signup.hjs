@@ -70,6 +70,13 @@
 				    	<br>
 				    	<input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!">
 				    </div>
+				    <div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	or 
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	<a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a>
+				    	<br><br><br>
+				    </div>
 				  </div>
 				</div>
 			</form>
