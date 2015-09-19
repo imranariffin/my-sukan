@@ -8,33 +8,37 @@
     <br><br><br><br><br><br><br>
     <div class="big-text"><!-- MySukan Canada<br>2015 --></div>
     <div class="big-text-sm"><!-- McMaster University | 10 October & 11 October 2015 | Saturday & Sunday --><br><br></div>
-    <button id="nav-btn-1" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;background-color:grey;">
+    <button id="nav-btn-1" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="width:15%;position:absolute;left:42.5%;bottom:0x;margin:0px;background-color:grey;">
+      <span id="nav-glyph-1" class="glyphicon glyphicon-chevron-down"></span>
+      Get Started
       <span id="nav-glyph-1" class="glyphicon glyphicon-chevron-down"></span>
     </button>
   </div>
 </section>
-<section class="section" id="section-2" style="width:100%;background-color:grey;background-image:url('/images/B2.JPG');background-size:cover;">
+<section class="section" id="section-2" style="width:100%;background-color:grey;background-image:url('/images/B1.png');background-size:cover;">
   <div style="height:100%;">
-    <br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="big-text">
-      Participants/<br>
-      Volunteers<br>
-      <a class="big-a" href="/signup">
-      Signup Now!
-      </a>
+      <button id="nav-btn-2" type="button" class="btn btn-default btn-lg nav-btn" aria-label="Left Align" style="width:25%;position:absolute;left:37.5%;bottom:0x;margin:0px;background-color:grey;font-size:20px;">
+<!--         <div class="" style="font-size:30px;" id="nav-btn-2"> -->
+          <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
+          Get Started
+          <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
+        <!-- </div> -->
+      </button>
     </div>
-    <br><br>
+    <br>
     <!-- <div class="big-text" style="color:#830300;font-size:30px;text-align:center;">Sign Up Now!</div> -->
-    <button id="nav-btn-2" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
+<!--     <button id="nav-btn-2" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
       <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
-    </button>
+    </button> -->
   </div>
 </section>
-<section class="section" id="section-3" style="width:100%;background-color:grey;background-image:url('/images/B3.JPG');background-size:cover;">
+<section class="section" id="section-3" style="width:100%;background-color:grey;background-image:url('/images/B2.JPG');background-size:cover;">
   <div style="height:100%;">
     <br><br><br><br><br><br>
     <!-- style="height:100%;text-align:center;font-size:190px;color:white; -->
-    <div class="big-text"><br><a class="big-a" href="/games">Game On!</a>
+    <div class="big-text"><br><a class="big-a" href="/signup">Sign up</a>
   <!--     <button type="button" class="btn btn-default" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;margin:0px;">
         <span class="glyphicon glyphicon-chevron-down"></span>
       </button> -->
@@ -46,10 +50,10 @@
   </div>
 </section>
 <!-- volunteers -->
-<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/B4.png');background-size:cover;">
+<section class="section" id="section-4" style="width:100%;background-color:grey;background-image:url('/images/B3.JPG');background-size:cover;">
   <br><br><br><br><br>
   <div style="height:100%;">
-    <div class="big-text" ><br><a class="big-a" href="/volunteers">Credits</a>
+    <div class="big-text" ><br><a class="big-a" href="/games">Game On!</a>
     </div>
     <button id="nav-btn-4" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
       <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
@@ -57,11 +61,10 @@
   </div>
 </section>
 <!-- sponsors -->
-<section class="section" id="section-5" style="width:100%;background-color:grey;background-image:url('/images/uh.png');background-size:cover;">
-  <div style="height:100%;text-align:center;font-size:190px;color:white;"><br><a class="big-a" href="/sponsors" style="color:white;text-decoration:none;">Sponsors</a>
-  <!-- <button id="nav-btn-5" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
-    <span id="nav-glyph-2" class="glyphicon glyphicon-chevron-down"></span>
-  </button> -->
+<section class="section" id="section-5" style="width:100%;background-color:grey;background-image:url('/images/B4.png');background-size:cover;">
+  <br><br><br><br><br><br><br>
+  <div class="big-text"><br><a class="big-a" href="/signup">Credits</a>
+    </div>
   </div>
 </section>
 

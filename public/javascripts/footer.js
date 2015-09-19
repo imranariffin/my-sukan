@@ -40,9 +40,11 @@ $(function () {
   //       'background-size' : 'cover'
   //     });
 
+  var MAROON = '#5D0F0D';
+
   $('a').mouseover(function () {
     $(this).css({
-      'color' : 'purple',
+      'color' : MAROON,
       'text-decoration' : 'none'
     });
   });
