@@ -10,13 +10,17 @@ var twitter = new Twitter({
 	application_only : true
 });
 
+// hashtag
+// var hashtag = 'sehatisejiwa';
+var hashtag = 'istandwithahmed';
+
 exports.byhastag = byhastag;
 exports.updateTweets = updateTweets;
 
 function byhastag (req, res, next) {
 
 	var byhashtagUrl = 'search/tweets';
-	var search_query = '%23istandwithahmed';
+	var search_query = '%23'+hashtag;
 	// &result_type=recent&include_entities=10';
 
 	twitter.get(byhashtagUrl, {
@@ -41,7 +45,7 @@ function byhastag (req, res, next) {
 function updateTweets (req, res, next) {
 
 	var byhashtagUrl = 'search/tweets';
-	var search_query = '%23istandwithahmed';
+	var search_query = '%23'+hashtag;
 	// &result_type=recent&include_entities=10';
 
 	twitter.get(byhashtagUrl, {
