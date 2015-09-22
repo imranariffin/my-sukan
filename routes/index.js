@@ -7,6 +7,7 @@ var User = require('../schemas/user');
 var getAllUniversities = require('./get-all-universities');
 var signup = require('./signup');
 var games = require('./games');
+var tweets = require('./tweet');
 
 /* GET home page. */
 router.get('/', homeGET);
@@ -38,6 +39,18 @@ router.get('/enrol', enrolGET);
 
 /* GET page to view details of all games */
 router.get('/games', games.GET);
+
+
+/////////* TWITTER API routes */////////////
+
+/* GET tweets by hastag */
+router.get('/tweets', tweets.byhastag);
+router.get('/update-tweets', tweets.updateTweets);
+
+// callback
+router.get('/auth/twitter/callback', function (req, res, next) {
+	res.send('twiter callback');
+});
 
 /*TEST $.scrollTo */
 
@@ -80,14 +93,16 @@ function homeGET (req, res, next) {
 					partials : {
 						header : 'header',
 						footer : 'footer'
-					}
+					},
+					isHomePage : true
 				});
 			} else {
 				res.render('scroll-to', { 
 					partials : {
 						header : 'header',
 						footer : 'footer'
-					}
+					},
+					isHomePage : true
 				});
 			}
 		});
@@ -96,7 +111,8 @@ function homeGET (req, res, next) {
 			partials : {
 				header : 'header',
 				footer : 'footer'
-			}
+			},
+			isHomePage : true
 		});
 	}
 }

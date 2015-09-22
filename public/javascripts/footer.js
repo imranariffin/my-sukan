@@ -1,6 +1,16 @@
 $(function () {
 
+  $(document).ready(function () {
+    $('#body-soccer').show();
+  });
+
   /* 'import' required variable from HTML page */
+
+  var isHomePage = $('#is-home-page').val();
+  if (isHomePage == 'true')
+    isHomePage = true;
+  else
+    isHomePage = false;
 
   var isSignupPage = $('#is-signup-page').val();
   if (isSignupPage == 'true')
@@ -19,6 +29,12 @@ $(function () {
     isGamesPage = true;
   else
     isGamesPage = false;
+
+  var isTweetPage = $('#is-tweet-page').val();
+  if (isTweetPage == 'true')
+    isTweetPage = true;
+  else
+    isTweetPage = false;
 
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
@@ -175,25 +191,28 @@ $(function () {
 
   // });
 
-  $(window).scroll(function() {
+  if (isHomePage) {
 
-    var scrollTop = $(window).scrollTop();
+    $(window).scroll(function() {
 
-    if (scrollTop < $('#section-2').position().top) {
-      console.log('@section-1');
-    } else if (scrollTop < $('#section-3').position().top) {
-      console.log('@section-2');
-    }
+      var scrollTop = $(window).scrollTop();
 
-      // console.log("$(window).scrollTop()");
-      // console.log($(window).scrollTop());
+      if (scrollTop < $('#section-2').position().top) {
+        console.log('@section-1');
+      } else if (scrollTop < $('#section-3').position().top) {
+        console.log('@section-2');
+      }
 
-      // console.log("$(#section-1).position().top - 19");
-      // console.log($('#section-1').position().top - 19);
+        // console.log("$(window).scrollTop()");
+        // console.log($(window).scrollTop());
 
-      // console.log("($('#section-3').position().top + height:");
-      // console.log($('#section-3').position().top + $(window).height());
-  });
+        // console.log("$(#section-1).position().top - 19");
+        // console.log($('#section-1').position().top - 19);
+
+        // console.log("($('#section-3').position().top + height:");
+        // console.log($('#section-3').position().top + $(window).height());
+    });
+  }
 
 /* Signup functions */
 
@@ -445,6 +464,44 @@ $(function () {
         'cursor' : 'pointer'
       });
     });
+  }
+
+  if (isTweetPage) {
+
+    $('body').css({
+      'background-color' : '#0fff3'
+    });
+
+    (function(){
+      // do some stuff
+      setInterval(updateTweet, 5000);
+    })();
+
+    function updateTweet () {
+      $.ajax({
+        type : 'GET',
+        url : '/update-tweets',
+        data : {},
+        success : function (response) {
+            console.log('new tweets:');
+            console.log(response.statuses);
+            var statuses = response.statuses;
+
+            // live update tweets
+            $('.twitter-text').each(function (index) {
+              $(this).text(statuses[index].text);
+              $(this).siblings('.twitter-username').text(statuses[index].user.name);
+              $(this).siblings('.twitter-profile-image').attr('src', statuses[index].user.profile_image_url);
+            });
+
+        },
+        error : function (err) {
+          console.log('err:');
+          console.log(err);
+        },
+        dataType : 'json'
+      });
+    }
   }
 
 });

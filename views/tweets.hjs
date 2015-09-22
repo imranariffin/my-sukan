@@ -1,0 +1,38 @@
+
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container" style="opacity:0.8;background-color:#4099FF;">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> 
+						<span style="color:blue;">
+							#mysukan2015
+						</span>
+						: Get our tweets on the wall!
+					</span>
+				  </div>
+
+				  <!-- {{tweets}} -->
+
+				  <div class="panel-body game-background">
+				  	<div class="panel panel-default game-container" >
+				  	{{#tweets.statuses}}
+				  		<div class="panel-body" id="body-{{id}}"  style="opacity:1.0;">
+				  			<img class="twitter-profile-image" src="{{user.profile_image_url}}" style="border-radius:50%;"> <br>
+				  			<span class="twitter-username">{{user.name}} <i>{{user.screen_name}}</i></span> <br>
+				  			<span class="twitter-text">{{text}}</span>
+				  			<hr>
+				  		</div>
+				  	{{/tweets.statuses}}
+				  	</div>
+				  </div>
+				</div>
+		</div>
+	</div>
+
+
+
+{{>footer}}

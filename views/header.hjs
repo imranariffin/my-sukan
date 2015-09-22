@@ -51,6 +51,7 @@
           <ul class="nav navbar-nav navbar-right">
             {{#user}}
             <li><img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">&nbsp</li>
+            <li><a href="/tweets">tweets</a></li>
             {{/user}}
             <!-- <li class="active"><a class="nav-a" id="nav-1">welcome</a></li> -->
             <!-- <li><a href="#" class="nav-a" id="nav-2">games</a></li> -->
