@@ -15,7 +15,7 @@ module.exports = {
 		// 'callbackURL' : 'http://localhost:3000/auth/facebook/callback'
 		// 'callbackURL' : 'http://localhost:3000/auth/facebook/callback'
 		'clientID' : mysukan_id,
-		'clientSecret' : mysukan_secret
+		'clientSecret' : mysukan_secret,
 		'callbackURL' : productionCallbackUrl
 	},
 	'twitter' : {
