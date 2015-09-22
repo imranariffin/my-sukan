@@ -115,8 +115,8 @@ function createGameGET (req, res, next) {
 	res.render('create-game', {
 		title : 'Admin - create game',
 		partials : {
-			header : 'header-signup',
-			footer : 'footer-create-game'
+			header : 'header',
+			footer : 'footer'
 		}
 	});
 }

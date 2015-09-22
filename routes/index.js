@@ -6,6 +6,7 @@ var User = require('../schemas/user');
 /* ROUTES IMPORT */
 var getAllUniversities = require('./get-all-universities');
 var signup = require('./signup');
+var signin = require('./signin');
 var games = require('./games');
 var tweets = require('./tweet');
 
@@ -20,6 +21,14 @@ router.get('/signup', signup.GET);
 
 /* POST: user signup */
 router.post('/signup', signup.validateForm, signup.POST);
+
+/* GET: user signin */
+router.get('/signin', signin.GET);
+
+/* POST: user signin */
+router.post('/signin', 
+	signin.validateForm, 
+	signin.POST);
 
 /* GET: user logs out */
 router.get('/logout', signout);
