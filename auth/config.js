@@ -1,7 +1,7 @@
 // var callbackURL = path.join('http://imranariffin-login-pag.elasticbeanstalk.com', '/auth/facebook/callback');
 
+// production
 var productionCallbackUrl = 'http://my-sukan-2016.herokuapp.com/auth/facebook/callback';
-
 var mysukan_secret = '003b7b4ce78b7542a9da476995bedae2';
 var mysukan_id = '748112425316942';
 
