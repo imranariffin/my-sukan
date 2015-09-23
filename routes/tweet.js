@@ -33,6 +33,7 @@ function byhastag (req, res, next) {
 
 		res.render('tweets', {
 			tweets : items,
+			user : req.user,
 			partials : {
 				header : 'header',
 				footer : 'footer'

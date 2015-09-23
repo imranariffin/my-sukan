@@ -105,7 +105,8 @@ function signupPOST (req, res, next) {
 				if (err)
 					res.send(err);
 				else
-					res.send('SUCCESS: save user on signup');
+					// res.send('SUCCESS: save user on signup');
+					res.redirect('/games');
 			});
 		}
 	});
