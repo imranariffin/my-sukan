@@ -417,6 +417,7 @@ function redirectToMain (req, res) {
     if (!err) {
       if (user) {
         req.session.user = user;
+        req.user = user;
         console.log('req.session.user:');
         console.log(req.session.user);
         console.log('redirecting to main');

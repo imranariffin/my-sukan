@@ -15,6 +15,8 @@ exports.updateProfilePOST = updateProfilePOST;
 function updateProfileGET (req, res, next) {
 
 	var user = req.user;
+	if (!user)
+		user = req.session.user;
 
 	res.render('update-profile', { 
   		title: 'Update Profile',

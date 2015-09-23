@@ -474,7 +474,7 @@ $(function () {
 
     (function(){
       // do some stuff
-      setInterval(updateTweet, 5000);
+      setInterval(updateTweet, 3000);
     })();
 
     function updateTweet () {
@@ -490,8 +490,33 @@ $(function () {
             // live update tweets
             $('.twitter-text').each(function (index) {
               $(this).text(statuses[index].text);
-              $(this).siblings('.twitter-username').text(statuses[index].user.name);
-              $(this).siblings('.twitter-profile-image').attr('src', statuses[index].user.profile_image_url);
+              $(this).siblings('.twitter-username')
+                .text(statuses[index].user.name);
+              $(this).siblings('.twitter-profile-image')
+                .attr('src', statuses[index].user.profile_image_url);
+              if (statuses[index].entities.media)
+              $(this).siblings('.twitter-media')
+                .attr('src', statuses[index].entities.media[0].media_url);
+              
+              var retweeted_status = statuses[index].retweeted_status;
+
+              if (retweeted_status) {
+                console.log('retweeted_status.text:');
+                console.log(retweeted_status.text);
+
+                $(this).siblings('.rt')
+                  .children('.rt-username')
+                  .text('@' + retweeted_status.text);
+
+                if (retweeted_status.entities.media) {
+                  $(this).siblings('.rt')
+                    .children('.rt-media')
+                    .attr('src', retweeted_status.entities.media[0].media_url);
+
+                  console.log('media_url:');
+                  console.log(statuses[index].retweeted_status.entities.media);
+                }
+              }
             });
 
         },
