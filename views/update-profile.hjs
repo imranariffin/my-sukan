@@ -1,0 +1,90 @@
+
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2016: Ready For Much Action?</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+			<form action="update-profile" method="POST">
+
+			{{#user}}
+
+			    <!-- csrf for security -->
+	        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
+
+				<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;opacity:0.85;">
+				  <div class="panel-heading">
+					<span style="width:70%;left:15%;"> Join Us Now!</span>
+				  </div>
+				  <div class="panel-body" style="opacity:1;">
+				  	<!-- user email -->
+		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
+		              <span class="input-group-addon" id="basic-addon1">@</span>
+		              <input name="email" value="{{email}}" type="email" class="form-control" placeholder="Email" disabled="disabled" aria-describedby="basic-addon1">
+		            </div>
+		            <br>
+		            <!-- user first name --> 
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
+						<input name="firstName" type="text" class="form-control" placeholder="first name" value="{{firstName}}" aria-describedby="sizing-addon2">	
+					</div>
+					<br>
+		            <!-- user last name -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1"> LN </span> -->
+						<input name="lastName" type="text" class="form-control" placeholder="last name" value="{{lastName}}" aria-describedby="sizing-addon2">	
+					</div>
+					<br>
+					<!-- user university -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">	</span> -->
+						<input name="school" value="{{schoolId}}" id="school" type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon2">
+						<br>
+						<input name="schoolId" id="schoolId" type="hidden" value="{{schoolId}}">
+					    <div class="result" id="result">
+					    </div>
+					</div>
+					<br>
+					<!-- become a volunteer! -->
+					<div class="input-group" style="width:70%;left:15%;">
+					      <input type="checkbox" name="becomeVolunteer">
+					      <span>become a volunteer!</span>
+					      <!-- <input type="text" aria-label="..." value="become a volunteer!" > -->
+					    </div><!-- /input-group -->
+
+					<div class="input-group" style="width:20%;left:40%;">
+				    	<br>
+				    	<!-- <input class="btn btn-default" style="width:100%;;" type="submit" value="I'm Ready!"> -->
+
+				    	<div style="width:100%;float:left;overflow:hidden;">
+				    		<input class="btn btn-default" style="width:100%;;" type="submit" value="update profile!">
+				    	</div>
+<!-- 				    	<div style="text-align:center;width:10%;float:left;overflow:hidden;">
+				    		or
+				    	</div>
+				    	<div style="width:45%;overflow:hidden;overflow:hidden;">
+				    		<a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:105%;height:100%;" src="/images/fb-login.png"> </a>
+				    	</div> -->
+
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	
+				    </div>
+				    <div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	<!-- or  -->
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	<!-- <a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a> -->
+				    	<!-- <br><br><br> -->
+				    </div>
+				  </div>
+				</div>
+
+			{{/user}}
+
+			</form>
+		</div>
+	</div>
+
+{{>footer}}
+
+

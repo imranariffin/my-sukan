@@ -21,9 +21,20 @@
 				  	<div class="panel panel-default game-container" >
 				  	{{#tweets.statuses}}
 				  		<div class="panel-body" id="body-{{id}}"  style="opacity:1.0;">
-				  			<img class="twitter-profile-image" src="{{user.profile_image_url}}" style="border-radius:50%;"> <br>
-				  			<span class="twitter-username">{{user.name}} <i>{{user.screen_name}}</i></span> <br>
-				  			<span class="twitter-text">{{text}}</span>
+				  			<div style="float:left;overflow:hidden;width:30%;">
+					  			<img class="twitter-profile-image" src="{{user.profile_image_url}}" style="border-radius:50%;"> <br>
+					  			<span class="twitter-username">
+					  				{{user.name}} <br>
+					  				<i>
+					  					{{user.screen_name}}
+					  				</i>
+					  			</span> 	
+				  			</div>
+				  			<div style="overflow:hidden;width:70%;">
+				  				<span class="twitter-text">{{text}}</span>
+				  			</div>
+				  			<br>
+				  			<br>
 				  			<hr>
 				  		</div>
 				  	{{/tweets.statuses}}

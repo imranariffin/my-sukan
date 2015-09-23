@@ -35,9 +35,13 @@ function updateSession (req, res, next) { //user next() for next middleware
   // console.log('req.session.user.facebook:');
   // console.log(req.session.user.facebook);
 
-  // console.log('\n');
-  // console.log('req.user:');
-  // console.log(req.user);
+  console.log('\n');
+  console.log('req.session:');
+  console.log(req.session);
+
+  console.log('\n');
+  console.log('req.user:');
+  console.log(req.user);
   // console.log('\n');
   // console.log('\n');
 

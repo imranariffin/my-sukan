@@ -9,6 +9,7 @@ var signup = require('./signup');
 var signin = require('./signin');
 var games = require('./games');
 var tweets = require('./tweet');
+var user = require('./user');
 
 /* GET home page. */
 router.get('/', homeGET);
@@ -29,6 +30,12 @@ router.get('/signin', signin.GET);
 router.post('/signin', 
 	signin.validateForm, 
 	signin.POST);
+
+/* GET: user updates profile or completes registration */
+router.get('/update-profile', user.updateProfileGET);
+
+/* POST: user updates profile or competes registration */
+router.post('/update-profile', user.updateProfilePOST);
 
 /* GET: user logs out */
 router.get('/logout', signout);

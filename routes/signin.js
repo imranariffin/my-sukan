@@ -58,9 +58,7 @@ function signinGET (req, res, next) {
 function signinPOST (req, res, next) {
 
 	var email = req.body.email;
-	var salt = bcrypt.genSaltSync(10);
-	var password = bcrypt.hashSync(req.body.password, salt);
-	var confirmPassword = bcrypt.hashSync(req.body.confirmPassword, salt);
+	var password = req.body.password;
 
 	User.findOne({email : email}, function (err, user) {
 		if (err) {
@@ -69,11 +67,24 @@ function signinPOST (req, res, next) {
 			res.send('err: user not found');
 		} else {
 			// good
+
+			console.log('password: ' + password)
+
 			// check if password correct
-			if (password === user.password)
-				res.send('good: password correct');
-			else
+			if (bcrypt.compareSync(password, user.password)) {
+				// res.send('good: password correct');
+				console.log('good: password correct');
+
+
+				// save to session
+				req.session.user = user;
+				req.user = user;
+
+				res.redirect('/games');
+
+			} else {
 				res.send('err: incorrect password');
+			}
 		}
 	});
 }
