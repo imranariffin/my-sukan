@@ -65,6 +65,15 @@
 					      <span>become a volunteer!</span>
 					      <!-- <input type="text" aria-label="..." value="become a volunteer!" > -->
 					    </div><!-- /input-group -->
+				    	
+				    	<hr>
+				    	<span style="color:red;font-size:10px;">
+				    		IMPORTANT:
+				    	</span>
+				    	<span style="font-size:10px;">
+							 Every participant is required to INTERACT the registration fee of CAD 27.00 to <span style="color:blue;">lokman_rasid@yahoo.com</span> with the included message:
+							mysukan2015(NAME,UNIVERSITY)
+						</span>
 
 					<div class="input-group" style="width:60%;left:20%;">
 				    	<br>
@@ -81,7 +90,6 @@
 				    	</div>
 
 				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
-				    	
 				    </div>
 				    <div class="input-group" style="width:50%;left:37.5%;">
 				    	<br>
