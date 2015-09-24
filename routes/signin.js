@@ -94,10 +94,6 @@ function validateForm (req, res, next) {
 	// must match password
 	var salt = bcrypt.genSaltSync(10);
 	var password = bcrypt.hashSync(req.body.password, salt);
-	var confirmPassword = bcrypt.hashSync(req.body.confirmPassword, salt);
 
-	if (confirmPassword === password)
-		next();
-	else
-		res.send('error: password do not match');
+	next();
 }

@@ -18,6 +18,12 @@ $(function () {
   else
     isSignupPage = false;
 
+  var isSigninPage = $('#is-signin-page').val();
+  if (isSigninPage == 'true')
+    isSigninPage = true;
+  else
+    isSigninPage = false;
+
   var isCreateGamePage = $('#is-create-game-page').val();
   if (isCreateGamePage == 'true')
     isCreateGamePage = true;
@@ -527,6 +533,16 @@ $(function () {
         dataType : 'json'
       });
     }
+  }
+
+  if (isSigninPage) {
+    $('body').css({
+      'margin' : 0,
+      'width' : width,
+      'padding' : 0,
+      'background-image' : "url('/images/stadium-crop.png')",
+      'background-size' : 'cover'
+    });
   }
 
 });

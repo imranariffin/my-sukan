@@ -1,7 +1,7 @@
 
  {{>header}}
  	<div>
- 		<br><br><br>
+ 		<br><br><br><br><br><br>
 	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2016: Ready For Much Action?</p>
 	  	<!-- <br> -->
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
@@ -29,14 +29,6 @@
 					    </div>
 					</div>
 					<br>
-					<!-- user confirm password -->
-					<div class="input-group" style="width:70%;left:15%;">
-						<span class="input-group-addon" id="basic-addon1">***</span>
-						<input name="confirmPassword" id="confirm-password" type="password" class="form-control" placeholder="confirm password" aria-describedby="sizing-addon2">
-						<br>
-					    <div class="result" id="result">
-					    </div>
-					</div>
 
 					<div class="input-group" style="width:60%;left:20%;">
 				    	<br>

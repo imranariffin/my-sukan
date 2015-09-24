@@ -15,6 +15,7 @@
 
     <!-- transfer variable from server -->
     <input id="is-signup-page" name="isSignupPage" type="hidden" value="{{isSignupPage}}">
+    <input id="is-signin-page" name="isSigninPage" type="hidden" value="{{isSigninPage}}">
     <input id="is-games-page" name="isGamesPage" type="hidden" value="{{isGamesPage}}">
     <input id="is-create-game-page" name="isCreateGeamePage" type="hidden" value="{{isCreateGamePage}}">
     <input id="is-tweet-page" name="isTweetPage" type="hidden" value="{{isTweetPage}}">
