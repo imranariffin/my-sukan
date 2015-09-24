@@ -30,6 +30,7 @@ function byhastag (req, res, next) {
 		// res.send(err);
 		// res.send(items);
 		// res.send(response);
+		// res.send(req.session.user);
 
 		res.render('tweets', {
 			tweets : items,

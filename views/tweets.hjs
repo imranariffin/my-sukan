@@ -32,12 +32,14 @@
 				  			</div>
 				  			<div style="overflow:hidden;width:70%;">
 				  				<span class="twitter-text">{{text}}</span>
-				  				<img class="twitter-media" src="{{entities.media.media_url}}" >
+				  				{{#entities.media}}
+				  					<img class="twitter-media" src="{{media_url}}" style="width:100%;height:{{sizes.small.h}};">
+				  				{{/entities.media}}
 				  				{{#retweeted_status}}
 				  				<div class="rt" style="position:relative;padding:10px;border:1px solid grey;border-radius:5px;">
 				  					<span class="rt-username">@{{user.screen_name}}: {{text}}</span>
 				  					{{#entities.media}}
-				  						<img class="rt-media" src="{{media_url}}" style="width:100%;;height:{{sizes.small.h}};">
+				  						<img class="rt-media" src="{{media_url}}" style="width:100%;height:{{sizes.small.h}};">
 				  					{{/entities.media}}
 				  					<!-- <img class="rt-media" src="/images/kasut.JPG" style="width:"> -->
 				  				</div>
