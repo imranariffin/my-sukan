@@ -661,10 +661,10 @@ function createTable ($, users) {
           '<tr>' +
             "<th style='width:20%;' >First Name</th>" +
             "<th style='width:20%;' >Last Name</th>" +
-            '<th>School</th>' +
-            '<th>Email</th>' +
-            "<th style='width:20%;' >Sports</th>" +
-            "<th style='width:10%;' >has paid</th>" +
+            "<th style='width:20%;' >School</th>" +
+            "<th style='width:15%;' >Email</th>" +
+            "<th style='width:15%;' >Sports</th>" +
+            "<th style='width:5%;' >paid</th>" +
             "<th style='width:5%;' >FB</th>" +
           '</tr>' +
         '</thead>' +

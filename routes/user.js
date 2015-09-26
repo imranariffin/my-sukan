@@ -14,9 +14,9 @@ exports.updateProfilePOST = updateProfilePOST;
 /* GET admin home page. */
 function updateProfileGET (req, res, next) {
 
-	var user = req.user;
-	if (!user)
-		user = req.session.user;
+	var user = req.session.user;
+	// if (!user)
+		// user = req.session.user;
 
 	res.render('update-profile', { 
   		title: 'Update Profile',
