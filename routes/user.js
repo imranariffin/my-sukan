@@ -43,14 +43,25 @@ function updateProfilePOST (req, res, next) {
 		} else if (!user) {
 			res.send('err: no user found');
 		} else {
-			user.firstName = firstName;
-			user.lastName = lastName;
-			user.school = school;
-			user.save(function (err) {
-				if (err)
+
+			// user.school = school;
+			var schoolName = req.body.school;
+			School.findOne({name : schoolName}, function (err, school) {
+				if (err) {
 					res.send(err);
-				else
-					res.redirect('/games');
+				} else {
+					user.school = String(school._id);
+					user.firstName = firstName;
+					user.lastName = lastName;
+
+					// save
+					user.save(function (err) {
+						if (err)
+							res.send(err);
+						else
+							res.redirect('/games');
+					});
+				}
 			});
 		}
 	});
