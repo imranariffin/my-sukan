@@ -15,6 +15,7 @@ var setupPassport = require('./functions/setup-passport');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
+var secure = require('./routes/secure');
 
 var app = express();
 
@@ -52,7 +53,9 @@ setupPassport(app, passport);
 // main routes
 app.use('/', routes);
 app.use('/users', users);
-app.use('/admin', admin);
+app.use('/admin', 
+  secure,
+  admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -42,6 +42,12 @@ $(function () {
   else
     isTweetPage = false;
 
+  var isUsersPage = $('#is-users-page').val();
+  if (isUsersPage == 'true')
+    isUsersPage = true;
+  else
+    isUsersPage = false;
+
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
   console.log("typeof($('#section-3').height()):");
@@ -223,7 +229,7 @@ $(function () {
 /* Signup functions */
 
   // GET list of universities that match keyWords
-  $('#school').keyup(function () {
+  $('#school').bind("keyup change", function () {
 
     var keyWords = '';
     keyWords = $('#school').val();
@@ -297,6 +303,9 @@ $(function () {
       });
 
     }
+
+    // // test
+    // $('#dropdown-menu').remove();
 
   });
 
@@ -545,27 +554,101 @@ $(function () {
     });
   }
 
-  $.ajax({
-    type : 'GET',
-    url : '/admin/get-users',
-    data : {},
-    success : function (users) {
+  if (isUsersPage) {
 
-      console.log('/admin/get-users');
-      console.log('users');
-      console.log(users);
+    // adjust main-div width
+    $('#main-div').css({
+      'width' : '80%',
+      'position' : 'relative',
+      'left' : '10%'
+    });
 
-      var data = [];
+    $.ajax({
+      type : 'GET',
+      url : '/admin/get-users',
+      data : {},
+      success : function (users) {
 
-      createTable($, users);
+        console.log('/admin/get-users');
 
-    },
-    error : function (err) {
-      console.log(err);
-    },
-    dataType : 'json'
-  });
+        createTable($, users);
+
+        // update table with school names
+        $('.td-school').each(function () {
+
+          var id = $(this).text();
+
+          console.log('.td-school.each()');
+          console.log('id:');
+          console.log(id);
+
+          if (id == '')
+            console.log('\n\nundeinfed\n\n');
+
+          var that = $(this);
+
+          if (id != '' && id != 'undefined')
+            $.ajax({
+              type : 'GET',
+              url : '/admin/schools',
+              data : {
+                schoolId : id
+              },
+              success : function (school) {
+                console.log('get school?id success');
+                console.log('school:');
+                console.log(school);
+                that.text(school.name);
+              },
+              error : function (err) {
+                console.log(err);
+              },
+              dataType : 'json'
+            });
+          else
+            that.text('---');
+
+        });
+
+        $('.td-email').each(function () {
+          var text = $(this).text();
+          if (text == '' || text == 'undefined')
+            $(this).text('---');
+        });
+        $('.td-sports').each(function () {
+          var text = $(this).text();
+          if (text == '' || text == 'undefined')
+            $(this).text('---');
+        });
+
+        // hide annoying table body
+        $('.no-records-found').parent('tbody').hide();
+
+      },
+      error : function (err) {
+        console.log(err);
+      },
+      dataType : 'json'
+    }, 1000);
+  }
+
+  // // update table with school names
+  // $.ajax({
+  //   type : 'GET',
+  //   url : '/admin/schools',
+  //   data : {},
+  //   success : function (schools) {
+
+  //   },
+  //   error : function (err) {
+  //     console.log(err);
+  //   },
+  //   dataType : 'json'
+  // });
+
 });
+
+
 
 function createTable ($, users) {
 
@@ -576,9 +659,13 @@ function createTable ($, users) {
   tableStruct+= 
         '<thead>' +
           '<tr>' +
-            '<th>First Name</th>' +
-            '<th>Last Name</th>' +
+            "<th style='width:20%;' >First Name</th>" +
+            "<th style='width:20%;' >Last Name</th>" +
             '<th>School</th>' +
+            '<th>Email</th>' +
+            "<th style='width:20%;' >Sports</th>" +
+            "<th style='width:10%;' >has paid</th>" +
+            "<th style='width:5%;' >FB</th>" +
           '</tr>' +
         '</thead>' +
         '<tbody>';
@@ -588,6 +675,9 @@ function createTable ($, users) {
 // );
 
   for (i in users) {
+
+    var user = users[i];
+
     data.push({
       firstName : users[i].firstName,
       lastName : users[i].lastName,
@@ -601,9 +691,13 @@ function createTable ($, users) {
     //   .append(
       tableStruct +=
         '<tr>' + 
-          '<td>' + data[i].firstName + '</td>' +
-          '<td>' + data[i].lastName + '</td>' +
-          '<td>' + data[i].school + '</td>' +
+          '<td>' + user.firstName + '</td>' +
+          '<td>' + user.lastName + '</td>' +
+          "<td class='td-school'>" + user.school + '</td>' +
+          "<td class='td-email'>" + user.email + '</td>' +
+          "<td class='td-sports'>" + user.sports + '</td>' +
+          "<td class='td-paid'>" + user.hasPaid + '</td>' +
+          "<td class='td-fblinked'>" + user.facebook.isLinked + '</td>' +
         '</tr>';
         // );
   }

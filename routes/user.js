@@ -21,6 +21,7 @@ function updateProfileGET (req, res, next) {
 	res.render('update-profile', { 
   		title: 'Update Profile',
   		user : user,
+  		isUpdateprofilePage : true,
   		partials : {
   			header : 'header',
   			footer : 'footer'

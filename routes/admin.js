@@ -22,13 +22,29 @@ router.get('/', function(req, res, next) {
 
 /* GET: admin views all schools */
 router.get('/schools', function (req, res, next) {
-	School.find({})
-		.exec(function (err, schools) {
-			if (err)
-				res.send(err);
-			else
-				res.send(schools);
-		});
+
+	console.log('/admin/schools');
+	console.log('req.query.schoolId:');
+	console.log(req.query.schoolId);
+
+	if (!req.query.schoolId)
+		School.find({})
+			.exec(function (err, schools) {
+				if (err)
+					res.send(err);
+				else
+					res.send(schools);
+			});
+	// else find by id
+	else
+		School.findOne({_id : req.query.schoolId})
+			.exec(function (err, school) {
+				if (err)
+					res.send(err);
+				else
+					res.send(school);
+			});
+
 });
 
 /* GET-API: get users */
@@ -51,6 +67,7 @@ router.get('/users', function (req, res, next) {
 			} else {
 				res.render('users', {
 					user : req.session.user,
+					isUsersPage : true,
 
 					users : users,
 

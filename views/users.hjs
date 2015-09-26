@@ -9,6 +9,9 @@
 				  <div class="panel-heading">
 					<span style="width:100%;left:15%;"> Participant list</span>
 				  </div>
+
+				  	<b>Admin: {{user.firstName}}</b>
+
 					<table id="users-table" data-toggle="table" data-cache="false" data-height="1000">
 					</table>
 				</div>
