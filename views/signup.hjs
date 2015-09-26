@@ -2,7 +2,7 @@
  {{>header}}
  	<div>
  		<br><br><br>
-	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2016: Ready For Much Action?</p>
+	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2015: Ready For Much Action?</p>
 	  	<!-- <br> -->
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
 			<form action="signup" method="POST">
