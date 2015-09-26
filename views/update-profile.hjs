@@ -40,7 +40,7 @@
 					<!-- user university -->
 					<div class="input-group" style="width:70%;left:15%;">
 						<!-- <span class="input-group-addon" id="basic-addon1">	</span> -->
-						<input name="school" value="{{schoolId}}" id="school" type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon2">
+						<input name="school" value="{{schoolId}}" id="school" type="text" class="form-control" autocomplete="off" placeholder="school" aria-describedby="sizing-addon2">
 						<br>
 						<input name="schoolId" id="schoolId" type="hidden" value="{{schoolId}}">
 					    <div class="result" id="result">
