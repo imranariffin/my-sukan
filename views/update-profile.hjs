@@ -7,8 +7,6 @@
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
 			<form action="update-profile" method="POST">
 
-			{{user.email}}
-
 			{{#user}}
 
 			    <!-- csrf for security -->

@@ -52,6 +52,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="height:20px;">
           <ul class="nav navbar-nav navbar-right">
+
             {{#user}}
             <li>
               <img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">
@@ -59,6 +60,7 @@
             </li>
             <li><a href="/tweets">tweets</a></li>
             {{/user}}
+            <li><a href="/update-profile">update profile</a></li>
             <!-- <li class="active"><a class="nav-a" id="nav-1">welcome</a></li> -->
             <!-- <li><a href="#" class="nav-a" id="nav-2">games</a></li> -->
             <!-- <li><a href="#" class="nav-a" id="nav-3">ready?</a></li> -->
@@ -84,6 +86,9 @@
               </a>
             </li>
             {{/user}}
+            {{#user.isAdmin}}
+            <li><a href="/admin/users" class="nav-a">admin:view users</a></li>
+            {{/user.isAdmin}}
             {{#user}}
             <li><a href="/logout" class="nav-a">logout</a></li>
             {{/user}}
