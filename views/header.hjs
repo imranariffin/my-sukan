@@ -7,6 +7,9 @@
     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
     <link rel='stylesheet' href='/stylesheets/stylezzz.css' />
     <link rel='stylesheet' href='/stylesheets/checkbox.css' />
+    <!-- bootstrap-table -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- You can use open graph tags to customize link previews.
@@ -50,7 +53,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="height:20px;">
           <ul class="nav navbar-nav navbar-right">
             {{#user}}
-            <li><img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">&nbsp</li>
+            <li>
+              <img style="width:30px;height:30px;border-radius:50%;" src="{{user.photo}}">
+              &nbsp
+            </li>
             <li><a href="/tweets">tweets</a></li>
             {{/user}}
             <!-- <li class="active"><a class="nav-a" id="nav-1">welcome</a></li> -->

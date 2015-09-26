@@ -12,7 +12,8 @@ var twitter = new Twitter({
 
 // hashtag
 // var hashtag = 'sehatisejiwa';
-var hashtag = 'istandwithahmed';
+// var hashtag = 'istandwithahmed';
+var hashtag = 'kipidap';
 
 exports.byhastag = byhastag;
 exports.updateTweets = updateTweets;

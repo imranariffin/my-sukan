@@ -359,7 +359,7 @@ $(function () {
       'width' : width,
       'padding' : 0,
       'background-image' : "url('/images/stadium-crop.png')",
-      'background-size' : 'cover'
+      'background-size' : 'cover',
     });
 
   }
@@ -545,4 +545,70 @@ $(function () {
     });
   }
 
+  $.ajax({
+    type : 'GET',
+    url : '/admin/get-users',
+    data : {},
+    success : function (users) {
+
+      console.log('/admin/get-users');
+      console.log('users');
+      console.log(users);
+
+      var data = [];
+
+      createTable($, users);
+
+    },
+    error : function (err) {
+      console.log(err);
+    },
+    dataType : 'json'
+  });
 });
+
+function createTable ($, users) {
+
+  var data = [];
+  var tableStruct = '';
+
+  // set table header
+  tableStruct+= 
+        '<thead>' +
+          '<tr>' +
+            '<th>First Name</th>' +
+            '<th>Last Name</th>' +
+            '<th>School</th>' +
+          '</tr>' +
+        '</thead>' +
+        '<tbody>';
+
+  // // set table header
+  // $('#users-table').append(
+// );
+
+  for (i in users) {
+    data.push({
+      firstName : users[i].firstName,
+      lastName : users[i].lastName,
+      school : users[i].school
+    });
+
+    console.log('data[i]:');
+    console.log(data[i]);
+    
+    // $('#users-table')
+    //   .append(
+      tableStruct +=
+        '<tr>' + 
+          '<td>' + data[i].firstName + '</td>' +
+          '<td>' + data[i].lastName + '</td>' +
+          '<td>' + data[i].school + '</td>' +
+        '</tr>';
+        // );
+  }
+  // ends table
+  tableStruct += '</tbody>';
+  console.log(tableStruct);
+  $('#users-table').append(tableStruct);
+}

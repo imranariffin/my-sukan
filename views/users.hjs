@@ -1,0 +1,20 @@
+
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> Participant list</span>
+				  </div>
+					<table id="users-table" data-toggle="table" data-cache="false" data-height="1000">
+					</table>
+				</div>
+		</div>
+	</div>
+
+
+
+{{>footer}}

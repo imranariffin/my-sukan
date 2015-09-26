@@ -31,14 +31,35 @@ router.get('/schools', function (req, res, next) {
 		});
 });
 
-/* GET: admin views all users */
-router.get('/users', function (req, res, next) {
+/* GET-API: get users */
+router.get('/get-users', function (req, res, next) {
 	User.find({})
 		.exec(function (err, users) {
 			if (err)
 				res.send(err);
-			else
+			else 
 				res.send(users);
+		});
+});
+
+/* GET: admin views all users */
+router.get('/users', function (req, res, next) {
+	User.find({})
+		.exec(function (err, users) {
+			if (err) {
+				res.send(err);
+			} else {
+				res.render('users', {
+					user : req.session.user,
+
+					users : users,
+
+					partials : {
+						header : 'header',
+						footer : 'footer'
+					}
+				});
+			}
 		});
 });
 
