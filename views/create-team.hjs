@@ -1,0 +1,67 @@
+
+ {{>header}}
+
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">MySukan2015: Ready For Much Action?</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+			<form action="/create-team" method="POST">
+			    <!-- csrf for security -->
+
+				<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;opacity:0.85;">
+				  <div class="panel-heading">
+					<span style="width:70%;left:15%;"> <b>Team leader:</b> create your winning team</span>
+				  </div>
+				  <div class="panel-body" style="opacity:1;">
+				  	<!-- team leader -->
+				  	<input type="hidden" name="leader" value="{{user._id}}">
+				  	<!-- team name -->
+		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
+		              <input name="team-name" type="text" class="form-control" placeholder="Team Name" aria-describedby="basic-addon1">
+		            </div>
+		            <br>
+		            <!-- game --> 
+					<div class="input-group" style="width:70%;left:15%;">
+						<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
+						<input name="game" type="text" class="form-control" placeholder="Game" aria-describedby="sizing-addon2">	
+					</div>
+					<br>
+					<!-- team-code -->
+					<div class="input-group" style="width:70%;left:15%;">
+						<span class="input-group-addon" id="basic-addon1">***</span>
+						<input name="team-code" id="teamcode" type="text" class="form-control" placeholder="team code" aria-describedby="sizing-addon2">
+						<br>
+					    <div class="result" id="result">
+					    </div>
+					</div>
+					<div class="input-group" style="width:70%;left:15%;">
+					    <span style="color:grey;">use this code to invite your team members</span>
+					</div>
+
+					<br>
+					<div class="input-group" style="width:70%;left:15%;">
+				    	<br>
+				    	<!-- <input class="btn btn-default" style="width:100%;;" type="submit" value="I'm Ready!"> -->
+
+				    	<div style="width:100%;float:left;overflow:hidden;">
+				    		<input class="btn btn-default" style="width:100%;;" type="submit" value="Create Team">
+				    	</div>
+				    	<div style="text-align:center;width:10%;float:left;overflow:hidden;">
+				    </div>
+				    <div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	<!-- or  -->
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	<!-- <a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a> -->
+				    	<!-- <br><br><br> -->
+				    </div>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{{>footer}}
+
+

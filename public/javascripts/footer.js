@@ -48,6 +48,12 @@ $(function () {
   else
     isUsersPage = false;
 
+  var isCreateTeamPage = $('#is-createteam-page').val();
+  if (isCreateTeamPage == 'true')
+    isCreateTeamPage = true;
+  else
+    isCreateTeamPage = false;
+
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
   console.log("typeof($('#section-3').height()):");
@@ -646,6 +652,16 @@ $(function () {
   //   dataType : 'json'
   // });
 
+  if (isCreateTeamPage) {
+    $('body').css({
+      'margin' : 0,
+      'width' : width,
+      'padding' : 0,
+      'background-image' : "url('/images/teamwork.jpg')",
+      'background-size' : 'cover',
+    });
+  }
+
 });
 
 
@@ -663,8 +679,9 @@ function createTable ($, users) {
             "<th style='width:20%;' >Last Name</th>" +
             "<th style='width:20%;' >School</th>" +
             "<th style='width:15%;' >Email</th>" +
-            "<th style='width:15%;' >Sports</th>" +
+            "<th style='width:10%;' >Sports</th>" +
             "<th style='width:5%;' >paid</th>" +
+            "<th style='width:5%;' >volunteer?</th>" +
             "<th style='width:5%;' >FB</th>" +
           '</tr>' +
         '</thead>' +
@@ -687,6 +704,11 @@ function createTable ($, users) {
     console.log('data[i]:');
     console.log(data[i]);
     
+    var isVolunteer = "<span style='color:red;'>Nope</span>";
+    if (user.isVolunteer)
+      isVolunteer = "<span style='color:blue';>Yup</span>";
+
+
     // $('#users-table')
     //   .append(
       tableStruct +=
@@ -697,6 +719,7 @@ function createTable ($, users) {
           "<td class='td-email'>" + user.email + '</td>' +
           "<td class='td-sports'>" + user.sports + '</td>' +
           "<td class='td-paid'>" + user.hasPaid + '</td>' +
+          "<td class='td-volunteer'>" + isVolunteer + '</td>' +
           "<td class='td-fblinked'>" + user.facebook.isLinked + '</td>' +
         '</tr>';
         // );

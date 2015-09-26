@@ -1,0 +1,65 @@
+
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> Join Your Team!</span>
+				  </div>
+
+				  {{#games}}
+
+				  <div class="panel-body game-background" style="background-image: url('/images/{{image}}');">
+				  	<div class="panel panel-default dummy-div" style="opacity:0">
+				  	</div>
+				  	<div class="panel panel-default game-container">
+				  		<div class="panel-heading game-heading" id="heading-{{id}}">
+				  			<b class="game-name" id="game-name-{{id}}">{{name}} &nbsp&nbsp&nbsp&nbsp ({{type}})</b>
+				  		</div>
+				  		<div class="panel-body" style="display:none;" id="body-{{id}}">
+				  			<p>
+				  			<!-- Details: <br> -->
+				  			<!-- bla3 zzzzz <br><br> -->
+				  			<b>Venue :</b> 
+				  			{{venue}} <br><br>
+
+				  			{{#rules}}
+				  			Rules : <br>
+				  			<ol>
+				  				<li>{{.}}</li>
+				  			</ol>
+				  			{{/rules}}
+
+				  			{{>gameplayAndTiming}}
+				  			<b>Gameplay and Timing</b>: <br>
+				  			{{>gameplayAndTiming}}
+				  			{{#gameplayAndTiming}}
+				  			<ol>
+				  				<li>{{.}}</li>
+				  			</ol>
+				  			{{/gameplayAndTiming}}
+				  			<br><br>
+
+				  			{{#extras}}
+				  				<b>* {{.}}</b> <br>
+				  			{{/extras}}
+				  			<!-- Time : <br> -->
+				  			<!-- zzz <br><br> -->
+				  			<!-- Contacts: <br> -->
+				  			<!-- volunteer name and phone number -->
+				  			</p>
+				  		</div>
+				  	</div>
+				  </div>
+
+				  {{/games}}
+				</div>
+		</div>
+	</div>
+
+
+
+{{>footer}}

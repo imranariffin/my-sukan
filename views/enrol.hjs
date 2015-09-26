@@ -1,0 +1,42 @@
+
+ {{>header}}
+
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> <b>Enrol</b></span>
+				  </div>
+				  <div class="panel-body">
+				  	<h3>
+				  		Are you a team leader?
+				  	</h3>
+
+				  	<span>
+				  		<a href="/create-team">
+					  		 <button type="button" class="btn btn-default" aria-label="Left Align">
+	  							<span class="glyphicons glyphicons-group">&nbsp create team
+	  							&nbsp</span>
+							</button>
+						</a>
+				  	</span>
+				  	<h3>
+				  		Are you a team member?
+				  	</h3>
+				  	<span>
+				  		 <button type="button" class="btn btn-default" aria-label="Left Align">
+  							<span class="glyphicons glyphicons-group"> &nbsp&nbsp join a team &nbsp</span>
+						</button>
+				  	</span>
+				  </div>
+					<!-- <table id="users-table" data-toggle="table" data-cache="false" data-height="1000"> -->
+					<!-- </table> -->
+				</div>
+		</div>
+	</div>
+
+
+{{>footer}}

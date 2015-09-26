@@ -9,6 +9,7 @@ var bcrypt = require('bcryptjs');
 
 /* EXPORTS */
 exports.GET = gamesGET;
+exports.enrolGET = enrolGET;
 // exports.POST = gamesPOST;
 
 /* CALLBACK function definitions */
@@ -67,6 +68,21 @@ function gamesGET (req, res, next) {
 	// });
 }
 
+function enrolGET (req, res, next) {
+
+	var page = 'enrol';
+	var title = 'Enrol';
+	var user = req.session.user;
+
+	res.render(page, {
+		user : user,
+		title : title,
+		partials : {
+			header : 'header',
+			footer : 'footer'
+		}
+	});
+}
 ////////////////////
 /* games data set */
 ////////////////////

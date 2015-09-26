@@ -10,6 +10,7 @@ var signin = require('./signin');
 var games = require('./games');
 var tweets = require('./tweet');
 var user = require('./user');
+var team = require('./team');
 
 /* GET home page. */
 router.get('/', homeGET);
@@ -55,6 +56,14 @@ router.get('/enrol', enrolGET);
 
 /* GET page to view details of all games */
 router.get('/games', games.GET);
+
+/* GET page to view details of all games */
+router.get('/games/enrol', games.enrolGET);
+
+// ************ TEAMS ************ //
+router.get('/teams', team.getTeams);
+router.get('/create-team', team.createTeamGET);
+router.post('/create-team', team.createTeamPOST);
 
 
 /////////* TWITTER API routes */////////////

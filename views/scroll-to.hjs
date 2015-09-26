@@ -43,7 +43,6 @@
         <span class="glyphicon glyphicon-chevron-down"></span>
       </button> -->
     </div>
-    <br><br>
     <button id="nav-btn-3" type="button" class="btn btn-default nav-btn" aria-label="Left Align" style="position:absolute;left:50%;bottom:0x;background-color:grey;">
         <span id="nav-glyph-3" class="glyphicon glyphicon-chevron-down"></span>
     </button>

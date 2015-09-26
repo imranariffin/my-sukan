@@ -54,7 +54,7 @@ setupPassport(app, passport);
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', 
-  secure,
+  secure.requireAdmin,
   admin);
 
 // catch 404 and forward to error handler
