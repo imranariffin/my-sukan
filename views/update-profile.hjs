@@ -7,7 +7,7 @@
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
 			<form action="update-profile" method="POST">
 
-			{{user}}
+			{{user.email}}
 
 			{{#user}}
 
@@ -21,8 +21,8 @@
 				  <div class="panel-body" style="opacity:1;">
 				  	<!-- user email -->
 		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
-		              <span class="input-group-addon" id="basic-addon1">@</span>
-		              <input name="email" value="{{email}}" type="email" class="form-control" placeholder="Email" disabled="disabled" aria-describedby="basic-addon1">
+		              <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+		              <input name="email" value="{{email}}" type="hidden" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
 		            </div>
 		            <br>
 		            <!-- user first name --> 
