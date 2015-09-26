@@ -422,7 +422,7 @@ function redirectToMain (req, res) {
         console.log(req.session.user);
         console.log('redirecting to main');
         // res.redirect('/dashboard');
-        res.redirect('/');
+        res.redirect('/update-profile');
         // next();
       } else if (req.user || req.session.user) {
         // TEST
