@@ -7,7 +7,10 @@
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
 				<div class="panel panel-default main-container">
 				  <div class="panel-heading">
-					<span style="width:100%;left:15%;"> Join Us Now!</span>
+					<span style="width:100%;left:15%;"> 
+						Join Us Now! &nbsp&nbsp 
+						<a href="/schedule">schedule</a>
+					</span>
 				  </div>
 
 				  {{#games}}

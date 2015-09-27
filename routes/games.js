@@ -11,6 +11,7 @@ var bcrypt = require('bcryptjs');
 /* EXPORTS */
 exports.GET = gamesGET;
 exports.enrolGET = enrolGET;
+exports.schedule = schedule;
 
 // exports.POST = gamesPOST;
 
@@ -85,6 +86,21 @@ function enrolGET (req, res, next) {
 		}
 	});
 }
+
+function schedule (req, res, next) {
+	var page = 'schedule';
+
+	res.render(page, {
+		user : req.session.user,
+		title : 'Game Schedule',
+		partials : {
+			header : 'header',
+			footer : 'footer'
+		},
+		isSchedulePage : true
+	});
+}
+
 ////////////////////
 /* games data set */
 ////////////////////

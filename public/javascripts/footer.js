@@ -60,6 +60,12 @@ $(function () {
   else
     isTeamPage = false;
 
+  var isSchedulePage = $('#is-schedule-page').val();
+  if (isSchedulePage == 'true')
+    isSchedulePage = true;
+  else
+    isSchedulePage = false;
+
 
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
@@ -782,6 +788,26 @@ $(function () {
     });
 
   }
+
+  if (isSchedulePage) {
+  //   $('body').css({
+  //     'margin' : 0,
+  //     'width' : width,
+  //     'padding' : 0,
+  //     'background-image' : "url('/images/schedule.jpg')",
+  //     'background-size' : 'cover'
+  //   });
+    $('.schedule-div').css({
+      'display' : 'block',
+      '-moz-box-sizing': 'border-box',
+      'box-sizing': 'border-box',
+      'background': "url(/images/schedule.jpg) no-repeat",
+      'width': '100%',
+      'height': '736px',
+      'padding-left': '180px',
+    })
+  }
+
 });
 
 

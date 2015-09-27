@@ -21,26 +21,21 @@ router.get('/get-all-universities', getAllUniversities);
 
 /* GET: user signup */
 router.get('/signup', signup.GET);
-
 /* POST: user signup */
 router.post('/signup', signup.validateForm, signup.POST);
-
 /* GET: user signin */
 router.get('/signin', signin.GET);
-
 /* POST: user signin */
 router.post('/signin', 
 	signin.validateForm, 
 	signin.POST);
+/* GET: user logs out */
+router.get('/logout', signout);
 
 /* GET: user updates profile or completes registration */
 router.get('/update-profile', user.updateProfileGET);
-
 /* POST: user updates profile or competes registration */
 router.post('/update-profile', user.updateProfilePOST);
-
-/* GET: user logs out */
-router.get('/logout', signout);
 
 // future routes
 /*
@@ -55,11 +50,9 @@ router.get('/logout', signout);
 // /* GET page to enrol in games */
 // router.get('/enrol', enrolGET);
 
-/* GET page to view details of all games */
 router.get('/games', games.GET);
-
-/* GET page to view details of all games */
 router.get('/games/enrol', games.enrolGET);
+router.get('/schedule', games.schedule);
 
 // ************ TEAMS ************ //
 router.get('/teams', team.getTeams);

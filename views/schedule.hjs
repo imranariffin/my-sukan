@@ -1,0 +1,26 @@
+
+ {{>header}}
+
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> 
+					<b>{{title}}</b>
+					</span>
+				  </div>
+
+				  <div class="panel-body schedule-div" style="background-image: url('/images/schedule.jpg');background-size:cover;">
+				  	</div>
+				  </div>
+
+				</div>
+		</div>
+	</div>
+
+
+
+{{>footer}}
