@@ -24,8 +24,21 @@
 		            <!-- game --> 
 					<div class="input-group" style="width:70%;left:15%;">
 						<!-- <span class="input-group-addon" id="basic-addon1">FN</span> -->
+						<div class="input-group-btn">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							    Game
+							    <span class="caret"></span>
+							</button>
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							  	{{#gameNames}}
+							    <li class="game-li"><a href="#">{{.}}</a></li>
+							    {{/gameNames}}
+							  </ul>
+						</div>
 						<input name="game" type="text" class="form-control" placeholder="Game" aria-describedby="sizing-addon2">	
 					</div>
+<!-- <div class="input-group" style="width:70%;left:15%;"> -->
+<!-- </div> -->
 					<br>
 					<!-- team-code -->
 					<div class="input-group" style="width:70%;left:15%;">

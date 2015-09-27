@@ -36,11 +36,11 @@
 				  			{{>gameplayAndTiming}}
 				  			<b>Gameplay and Timing</b>: <br>
 				  			{{>gameplayAndTiming}}
+				  			<ul>
 				  			{{#gameplayAndTiming}}
-				  			<ol>
 				  				<li>{{.}}</li>
-				  			</ol>
 				  			{{/gameplayAndTiming}}
+				  			</ul>
 				  			<br><br>
 
 				  			{{#extras}}

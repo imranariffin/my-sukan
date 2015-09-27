@@ -27,9 +27,11 @@
 				  		Are you a team member?
 				  	</h3>
 				  	<span>
-				  		 <button type="button" class="btn btn-default" aria-label="Left Align">
-  							<span class="glyphicons glyphicons-group"> &nbsp&nbsp join a team &nbsp</span>
-						</button>
+				  		<a href="/teams">
+					  		 <button type="button" class="btn btn-default" aria-label="Left Align">
+	  							<span class="glyphicons glyphicons-group"> &nbsp&nbsp join a team &nbsp</span>
+							</button>
+						</a>
 				  	</span>
 				  </div>
 					<!-- <table id="users-table" data-toggle="table" data-cache="false" data-height="1000"> -->

@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 var User = require('../schemas/user');
 var School = require('../schemas/school');
+var Game = require('../schemas/game');
 
 /* password hasher for much security */
 var bcrypt = require('bcryptjs');
@@ -10,6 +11,7 @@ var bcrypt = require('bcryptjs');
 /* EXPORTS */
 exports.GET = gamesGET;
 exports.enrolGET = enrolGET;
+
 // exports.POST = gamesPOST;
 
 /* CALLBACK function definitions */
@@ -288,4 +290,62 @@ function editGame (name, venue, teamSize, gameplay) {
 
 function addGame (game) {
 	games.append(game);
+}
+
+//////////////////////////////////////////////
+// !!!!!! important: only use once !!!!!!!! //
+//////////////////////////////////////////////
+
+exports.updateAllGames = updateAllGames;
+
+function updateAllGames (req, res, next) {
+
+	for (i in games) {
+		var game = games[i];
+		var newGame = new Game ({
+			_id : mongoose.Types.ObjectId(),
+			id : game.id,
+			name : game.name,
+			image : game.image,
+			type : game.type,
+		});
+
+		console.log('\ngame:')
+		console.log(game);
+
+		if (game.details)
+			newGame.details = game.details;
+		if (game.extras)
+			newGame.extras = game.extras;
+		if (game.extras)
+			newGame.extras = game.extras;
+		if (game.times)
+			newGame.times = game.times;
+		if (game.gameplayAndTiming)
+			newGame.gameplayAndTiming = game.gameplayAndTiming;
+		if (game.venue)
+			newGame.venue = game.venue;
+		if (game.extras)
+			newGame.teamSize = game.teamSize;
+		if (game.extras)
+			newGame.gameplay = game.gameplay;
+
+		newGame.save(function (err) {
+			if (err)
+				console.log(err);
+		});
+
+		console.log('\nnewGame:')
+		console.log(newGame);
+
+	}
+
+	Game
+		.find({})
+		.exec(function (err, games) {
+			if (err)
+				res.send(err)
+			else
+				res.send(games);
+		});
 }

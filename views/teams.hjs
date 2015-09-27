@@ -1,9 +1,14 @@
 
  {{>header}}
  	<div>
-	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<p style="font-size:35px;text-align:center;color:purple;">
+	  		<br>{{title}}: 
+	  	</p>
+	  	<p style="text-align:center;">
+	  		Team leaders: <a href="/games/enrol">Create your team</a>
+	  	</p>
 	  	<!-- <br> -->
-		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+		<div id="main-div" style="width:70%;position:relative;left:15%;">
 				<div class="panel panel-default main-container">
 				  <div class="panel-heading">
 					<span style="width:100%;left:15%;"> Join Your Team!</span>
@@ -14,21 +19,37 @@
 				  <div id="{{_id}}" class="panel-body teams" style="height:100px;padding:10px;margin-bottom:10px;background-image: url('/images/{{image}}');">
 				  	<!-- <div style="position:inherit;width:100%;"> -->
 					  	<div style="width:85%;float:left;display:inline-block:overflow:hidden;">
-					  		<b>{{name}}</b> &nbsp ({{game}})				 <br>
-					  		<b>Team leader:</b> 		{{leader}} <br>
-					  		<!-- <b>Game :</b> 				{{game}} <br> -->
-					  		<b>Members :</b> 			<span class="team-members" id="{{_id}}-members" >{{members}}</span> <br>
-					  		<form action="/join"d method="POST">
-					  			<input name="teamId" value="{{_id}}" type="hidden">
-								<input name="joinTeam" type="submit">
-								<button type="button" class="btn btn-default" aria-label="Left Align">
-  									<span class="glyphicon glyphicon-log-in" aria-hidden="true">&nbsp Join Team</span>
-								</button>
-<div class="input-group">
-  <span class="input-group-addon glyphicon glyphicon-log-in" id="sizing-addon2"></span>
-  <input type="submit" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
-</div>
-					  		</form>
+						  	<p>
+						  		<b>{{name}}</b> &nbsp ({{game}}) &nbsp&nbsp
+						  			<span class="joined" id="joined-{{_id}}" style="color:green;display:none;">
+						  				joined &nbsp
+						  			</span>
+						  			<span class="showcode" id="showcode-{{_id}}" style="color:blue;display:none;">
+						  				code: {{code}}
+						  			</span>
+								<br>
+						  		<b>Team leader:</b> 		
+						  			<span class="leaders">
+						  				{{leader}}
+						  			</span> <br>
+						  		<!-- <b>Game :</b> 				{{game}} <br> -->
+						  		<b>Members :</b> 			<span class="team-members" >{{members}}</span> 
+
+						  		<br>
+						  		<form action="/join" method="POST">
+						  			<input name="teamId" value="{{_id}}" type="hidden">
+									<!-- <input name="joinTeam" type="submit"> -->
+									<button type="button" class="btn btn-default" aria-label="Left Align">
+	  									<span class="glyphicon glyphicon-log-in join-team-btn" aria-hidden="true">&nbsp Join Team</span>
+									</button>
+									<input type="text" class="join-team-input" name="code" id="{{_id}}-code" placeholder="enter team code">
+									<input type="submit" class="join-team-input" value="join" style="border:1px solid #006;background: #9cf;">
+<!-- 									<div class="input-group">
+									  <span class="input-group-addon glyphicon glyphicon-log-in" id="sizing-addon2"></span>
+									  <input type="submit" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+									</div> -->
+						  		</form>
+						  	</p>
 					  	</div>
 					  	<div style="display:inline-block;overflow:hidden;width:15%;height:100%;;background-image:url('/images/B1.png');background-size:cover;">
 
@@ -36,9 +57,9 @@
 					  		<input id="upload-teamphoto" style="height:100%;opacity:0;cursor:pointer;" type="file" />
 					  		<!-- <img src="/images/B1.png" style="position:relative;left:25%;width:50%;"> -->
 					  	</div>
-					  		<span id="upload-file">
+		<!-- 			  		<span id="upload-file">
 					  			Upload file	
-					  		</span>
+					  		</span> -->
 				  	<!-- </div> -->
 				  	<!-- <hr> -->
 				  </div>

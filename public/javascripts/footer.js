@@ -667,6 +667,20 @@ $(function () {
       'background-image' : "url('/images/teamwork.jpg')",
       'background-size' : 'cover',
     });
+
+    $(".dropdown-toggle").dropdown();
+
+    $('.game-li').click(function () {
+
+      console.log('game-li clicked');
+
+      var that = $(this);
+      $('#dropdownMenu1').text(that.text());
+      $('#dropdownMenu1').append(
+        $('<span/>').attr('class', 'caret')
+      );
+    });
+
   }
 
   if (isTeamPage) { // isTeamPage 
@@ -678,24 +692,25 @@ $(function () {
     });
 
     // update team members: displa member names instead of member ids
-    $('.teams').each(function () {
+    $('.team-members').each(function () {
 
-      var teamId = $(this).attr('id');
+      var memberIds = $(this).text();
+      var that = $(this);
 
-      console.log('each team: ' + teamId);
+      console.log('team members: ' + that.text());
 
       $.ajax({
-        url : '/teams/get-members/',
-        data : {teamId : teamId},
-        success : function (members) {
-          var memberNames = "";
-          for (i in members) {
-            memberNames += members[i].name + " ";
-          }
+        url : 'api/get-team-member-names',
+        data : {memberIds : memberIds},
+        success : function (memberNames) {
+          // var memberNames = "";
+          // for (i in members) {
+          //   memberNames += members[i].name + " ";
+          // }
           // $('#' + teamId + '-members').text(memberNames);
-          $('#' + teamId + '-members').text(members.members);
+          that.text(memberNames);
 
-          console.log('\nsuccess /teams/get-members\n');
+          console.log('\nsuccess /teams/get-member-names\n');
 
         },
         error : function (err) {
@@ -703,6 +718,65 @@ $(function () {
         },
         dataType : 'json'
       })
+    });
+
+    $('.join-team-input').hide();
+
+    $('.join-team-btn').click(function (event) {
+      $(this).parent().siblings('input').toggle();
+    });
+
+    $('.leaders').each(function () {
+
+      var userId = $(this).text();
+      userId = userId.replace(/\s+/g, '');
+      var that = $(this);
+
+      $.ajax({
+        url : '/get-user-by-id',
+        data : {
+          userId : userId
+        },
+        success : function (user) {
+          console.log('success /get-user-by-id');
+          console.log('userId: ' + userId);
+          // $('#' + userId).text(user.firstName);
+          that.text(user.firstName);
+        },
+        err : function (err) { 
+          console.log('error /get-user-by-id');
+        },
+        dataType : 'json'
+      });
+    });
+
+    $('.joined').each(function () {
+
+      var teamId = $(this).attr('id');
+      console.log('before slice teamId: ' + teamId);
+      teamId = teamId.slice('joined-'.length, teamId.length);
+      console.log('teamId: ' + teamId);
+
+      $.ajax({
+        url : 'is-user-a-team-member',
+        data : {
+          teamId : teamId
+        },
+        success : function (response) {
+          console.log('response:');
+          console.log(response);
+          // unhide span-joined
+          if (response.response)
+            $('#joined-'+teamId).show();
+          if (response.isLeader)
+            $('#showcode-'+teamId).show();
+
+        },
+        error : function (err) {
+          console.log(err);
+        },
+        dataType : 'json'
+      });
     });
 
   }
@@ -775,4 +849,4 @@ function createTable ($, users) {
   tableStruct += '</tbody>';
   console.log(tableStruct);
   $('#users-table').append(tableStruct);
-}
+} 

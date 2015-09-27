@@ -11,6 +11,7 @@ var games = require('./games');
 var tweets = require('./tweet');
 var user = require('./user');
 var team = require('./team');
+var apis = require('./apis');
 
 /* GET home page. */
 router.get('/', homeGET);
@@ -51,8 +52,8 @@ router.get('/logout', signout);
 	GET /scoreboard -- shows current scores of all games	
 */
 
-/* GET page to enrol in games */
-router.get('/enrol', enrolGET);
+// /* GET page to enrol in games */
+// router.get('/enrol', enrolGET);
 
 /* GET page to view details of all games */
 router.get('/games', games.GET);
@@ -64,8 +65,15 @@ router.get('/games/enrol', games.enrolGET);
 router.get('/teams', team.getTeams);
 router.get('/create-team', team.createTeamGET);
 router.post('/create-team', team.createTeamPOST);
-router.get('/teams/get-members', team.getTeamMembers);
+// router.get('/teams/get-members', team.getTeamMembers);
 
+/////////* INTERNAL API routes */////////////
+
+router.get('/get-user-by-id', apis.getUserById);
+router.get('/is-user-a-team-member', apis.isUserATeamMember);
+router.get('/get-teams', apis.getTeams);
+router.get('/api/get-team-member-names', apis.getTeamMembers);
+router.get('/api/get-games', apis.getGames);
 
 /////////* TWITTER API routes */////////////
 
@@ -156,3 +164,10 @@ function signout (req, res, next) {
 
 	res.redirect('/');
 }
+
+
+//////////////////////////////////////////////
+// !!!!!! important: only use once !!!!!!!! //
+//////////////////////////////////////////////
+
+// router.post('/update-games', games.updateAllGames);

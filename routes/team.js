@@ -2,10 +2,11 @@
 exports.getTeams = getTeams;
 exports.createTeamGET = createTeamGET;
 exports.createTeamPOST = createTeamPOST;
-exports.getTeamMembers = getTeamMembers;
+// exports.getTeamMembers = getTeamMembers;
 
 
 var Team = require('../schemas/team');
+var Game = require('../schemas/game');
 
 // router.use('/create-team', createTeam)
 
@@ -39,17 +40,33 @@ function createTeamGET (req, res, next) {
 	var page = 'create-team';
 	var title = 'Create A Team';
 	var user = req.session.user;
+	var gameNames;
 
-	res.render(page, {
-		title : title,
-		user : user,
-		partials : {
-			header : 'header',
-			footer : 'footer'
-		},
-		isCreateTeamPage : true
-	});
+	// get game names
+	Game
+		.find({})
+		.exec(function (err, games) {
+			if (err) 
+				res.send(err);
+			else
+				gameNames = games.map(function (e, i, a) {
+					return e.name;
+				});
 
+			// res.send(gameNames);
+
+			res.render(page, {
+				title : title,
+				user : user,
+				partials : {
+					header : 'header',
+					footer : 'footer'
+				},
+				isCreateTeamPage : true,
+
+				gameNames : gameNames
+			});
+		});
 }
 
 function createTeamPOST (req, res, next) {
