@@ -679,6 +679,8 @@ $(function () {
       $('#dropdownMenu1').append(
         $('<span/>').attr('class', 'caret')
       );
+
+      $('#game-input').val(that.text());
     });
 
   }
