@@ -57,9 +57,9 @@
             {{^hasPaid}}
               <li>
               <span style="font-size:10px;color:red;">Note</span>
-              <span style="font-size:10px;">
-                : If you haven't paid for the event, please interac to lokman_rasid@yahoo.com with message="mysukan2015-NAME-UNIVERSITY"
-                &nbsp&nbsp
+              <span style="font-size:9.5px;">
+                : If you haven't done your payment, please interac to lokman_rasid@yahoo.com, message="mysukan2015-NAME-UNIVERSITY"
+                &nbsp
               </span>
               </li>
             {{/hasPaid}}
