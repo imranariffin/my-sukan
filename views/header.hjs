@@ -74,6 +74,7 @@
             <!-- <li><a href="#" class="nav-a" id="nav-2">games</a></li> -->
             <!-- <li><a href="#" class="nav-a" id="nav-3">ready?</a></li> -->
             <li><a href="/games">games</a></li>
+            <li><a href="/teams">teams</a></li>
             {{^user}}
             <li>
               <a href="/signup" class="nav-a" id="nav-4">
