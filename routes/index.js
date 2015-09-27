@@ -64,6 +64,7 @@ router.get('/games/enrol', games.enrolGET);
 router.get('/teams', team.getTeams);
 router.get('/create-team', team.createTeamGET);
 router.post('/create-team', team.createTeamPOST);
+router.get('/teams/get-members', team.getTeamMembers);
 
 
 /////////* TWITTER API routes */////////////

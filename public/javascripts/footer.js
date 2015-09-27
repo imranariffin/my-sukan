@@ -54,6 +54,13 @@ $(function () {
   else
     isCreateTeamPage = false;
 
+  var isTeamPage = $('#is-team-page').val();
+  if (isTeamPage == 'true')
+    isTeamPage = true;
+  else
+    isTeamPage = false;
+
+
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
   console.log("typeof($('#section-3').height()):");
@@ -662,6 +669,43 @@ $(function () {
     });
   }
 
+  if (isTeamPage) { // isTeamPage 
+
+    console.log('isTeamPage');
+
+    $('#upload-teamphoto').change(function () {
+      $("#upload-file").text($(this).val());
+    });
+
+    // update team members: displa member names instead of member ids
+    $('.teams').each(function () {
+
+      var teamId = $(this).attr('id');
+
+      console.log('each team: ' + teamId);
+
+      $.ajax({
+        url : '/teams/get-members/',
+        data : {teamId : teamId},
+        success : function (members) {
+          var memberNames = "";
+          for (i in members) {
+            memberNames += members[i].name + " ";
+          }
+          // $('#' + teamId + '-members').text(memberNames);
+          $('#' + teamId + '-members').text(members.members);
+
+          console.log('\nsuccess /teams/get-members\n');
+
+        },
+        error : function (err) {
+          console.log('error /teams/get-members');
+        },
+        dataType : 'json'
+      })
+    });
+
+  }
 });
 
 
@@ -707,7 +751,9 @@ function createTable ($, users) {
     var isVolunteer = "<span style='color:red;'>Nope</span>";
     if (user.isVolunteer)
       isVolunteer = "<span style='color:blue';>Yup</span>";
-
+    var hasPaid = "No";
+    if (user.hasPaid)
+      hasPaid = "Yes";
 
     // $('#users-table')
     //   .append(
@@ -718,12 +764,13 @@ function createTable ($, users) {
           "<td class='td-school'>" + user.school + '</td>' +
           "<td class='td-email'>" + user.email + '</td>' +
           "<td class='td-sports'>" + user.sports + '</td>' +
-          "<td class='td-paid'>" + user.hasPaid + '</td>' +
+          "<td class='td-paid'>" + hasPaid + '</td>' +
           "<td class='td-volunteer'>" + isVolunteer + '</td>' +
           "<td class='td-fblinked'>" + user.facebook.isLinked + '</td>' +
         '</tr>';
         // );
   }
+
   // ends table
   tableStruct += '</tbody>';
   console.log(tableStruct);

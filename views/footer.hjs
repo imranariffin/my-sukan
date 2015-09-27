@@ -26,6 +26,7 @@
     <input id="is-home-page" name="isHomePage" type="hidden" value="{{isHomePage}}">
     <input id="is-users-page" name="isUsersPage" type="hidden" value="{{isUsersPage}}">
     <input id="is-createteam-page" name="isCreateTeamPage" type="hidden" value="{{isCreateTeamPage}}">
+    <input id="is-team-page" name="isTeamPage" type="hidden" value="{{isTeamPage}}">
 
     <!-- import local jquer scripts -->
     <script type="text/javascript" src="/javascripts/footer.js"></script>

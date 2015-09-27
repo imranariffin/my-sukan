@@ -1,7 +1,6 @@
 
  {{>header}}
  	<div>
- 		<br><br><br>
 	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
 	  	<!-- <br> -->
 		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
@@ -10,52 +9,41 @@
 					<span style="width:100%;left:15%;"> Join Your Team!</span>
 				  </div>
 
-				  {{#games}}
+				  {{#teams}}
 
-				  <div class="panel-body game-background" style="background-image: url('/images/{{image}}');">
-				  	<div class="panel panel-default dummy-div" style="opacity:0">
-				  	</div>
-				  	<div class="panel panel-default game-container">
-				  		<div class="panel-heading game-heading" id="heading-{{id}}">
-				  			<b class="game-name" id="game-name-{{id}}">{{name}} &nbsp&nbsp&nbsp&nbsp ({{type}})</b>
-				  		</div>
-				  		<div class="panel-body" style="display:none;" id="body-{{id}}">
-				  			<p>
-				  			<!-- Details: <br> -->
-				  			<!-- bla3 zzzzz <br><br> -->
-				  			<b>Venue :</b> 
-				  			{{venue}} <br><br>
+				  <div id="{{_id}}" class="panel-body teams" style="height:100px;padding:10px;margin-bottom:10px;background-image: url('/images/{{image}}');">
+				  	<!-- <div style="position:inherit;width:100%;"> -->
+					  	<div style="width:85%;float:left;display:inline-block:overflow:hidden;">
+					  		<b>{{name}}</b> &nbsp ({{game}})				 <br>
+					  		<b>Team leader:</b> 		{{leader}} <br>
+					  		<!-- <b>Game :</b> 				{{game}} <br> -->
+					  		<b>Members :</b> 			<span class="team-members" id="{{_id}}-members" >{{members}}</span> <br>
+					  		<form action="/join"d method="POST">
+					  			<input name="teamId" value="{{_id}}" type="hidden">
+								<input name="joinTeam" type="submit">
+								<button type="button" class="btn btn-default" aria-label="Left Align">
+  									<span class="glyphicon glyphicon-log-in" aria-hidden="true">&nbsp Join Team</span>
+								</button>
+<div class="input-group">
+  <span class="input-group-addon glyphicon glyphicon-log-in" id="sizing-addon2"></span>
+  <input type="submit" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+</div>
+					  		</form>
+					  	</div>
+					  	<div style="display:inline-block;overflow:hidden;width:15%;height:100%;;background-image:url('/images/B1.png');background-size:cover;">
 
-				  			{{#rules}}
-				  			Rules : <br>
-				  			<ol>
-				  				<li>{{.}}</li>
-				  			</ol>
-				  			{{/rules}}
-
-				  			{{>gameplayAndTiming}}
-				  			<b>Gameplay and Timing</b>: <br>
-				  			{{>gameplayAndTiming}}
-				  			{{#gameplayAndTiming}}
-				  			<ol>
-				  				<li>{{.}}</li>
-				  			</ol>
-				  			{{/gameplayAndTiming}}
-				  			<br><br>
-
-				  			{{#extras}}
-				  				<b>* {{.}}</b> <br>
-				  			{{/extras}}
-				  			<!-- Time : <br> -->
-				  			<!-- zzz <br><br> -->
-				  			<!-- Contacts: <br> -->
-				  			<!-- volunteer name and phone number -->
-				  			</p>
-				  		</div>
-				  	</div>
+					  		<!-- upload team photo -->
+					  		<input id="upload-teamphoto" style="height:100%;opacity:0;cursor:pointer;" type="file" />
+					  		<!-- <img src="/images/B1.png" style="position:relative;left:25%;width:50%;"> -->
+					  	</div>
+					  		<span id="upload-file">
+					  			Upload file	
+					  		</span>
+				  	<!-- </div> -->
+				  	<!-- <hr> -->
 				  </div>
 
-				  {{/games}}
+				  {{/teams}}
 				</div>
 		</div>
 	</div>

@@ -18,7 +18,7 @@
 				  	<input type="hidden" name="leader" value="{{user._id}}">
 				  	<!-- team name -->
 		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
-		              <input name="team-name" type="text" class="form-control" placeholder="Team Name" aria-describedby="basic-addon1">
+		              <input name="teamName" type="text" class="form-control" placeholder="Team Name" aria-describedby="basic-addon1">
 		            </div>
 		            <br>
 		            <!-- game --> 
@@ -30,7 +30,7 @@
 					<!-- team-code -->
 					<div class="input-group" style="width:70%;left:15%;">
 						<span class="input-group-addon" id="basic-addon1">***</span>
-						<input name="team-code" id="teamcode" type="text" class="form-control" placeholder="team code" aria-describedby="sizing-addon2">
+						<input name="teamCode" id="teamcode" type="text" class="form-control" placeholder="team code" aria-describedby="sizing-addon2">
 						<br>
 					    <div class="result" id="result">
 					    </div>
