@@ -115,8 +115,8 @@ function forgotPasswordPOST (req, res, next) {
 	// the same transporter object for all e-mails
 
 	var resetToken = randomString(10);
-	// var resetLink = "http://my-sukan-2016.herokuapp.com/reset/" + resetToken;
-	var resetLink = "http://localhost:3000/reset/" + resetToken;
+	var resetLink = "http://my-sukan-2016.herokuapp.com/reset/" + resetToken;
+	// var resetLink = "http://localhost:3000/reset/" + resetToken;
 	User
 		.findOne({email : userEmail})
 		.exec(function (err, user) {
