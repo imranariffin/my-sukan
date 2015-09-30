@@ -66,6 +66,12 @@ $(function () {
   else
     isSchedulePage = false;
 
+  var isAccommodationPage = $('#is-accommodation-page').val();
+  if (isAccommodationPage == 'true')
+    isAccommodationPage = true;
+  else
+    isAccommodationPage = false;
+
 
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
@@ -808,6 +814,22 @@ $(function () {
     })
   }
 
+  if (isAccommodationPage) {
+    console.log("is isAccommodationPage");
+
+    $(".hotel-background").each(initializeHotels);
+
+    $('body').css({
+      'margin' : 0,
+      'width' : width,
+      'padding' : 0,
+      'background-image' : "url('/images/hamilton-fall.jpg')",
+      'background-size' : 'cover'
+      // 'background-repeat' : 'no-repeat'
+    });
+
+  }
+
 });
 
 
@@ -878,3 +900,133 @@ function createTable ($, users) {
   console.log(tableStruct);
   $('#users-table').append(tableStruct);
 } 
+
+// callback function inside $('.hotel-background').each();
+function initializeHotels () {
+
+  console.log('each hotel background');
+
+  var that = $(this);
+
+  for (i in hotels) {
+    
+    var hotel = hotels[i];
+
+    var hotelData = "<div class='panel panel-default dummy-div' style='opacity:0'>";
+    hotelData += "</div>";
+    
+    hotelData += "<div class='panel panel-default game-container'>  ";
+    
+    hotelData += "<div class='panel-heading hotel-heading'>";
+    hotelData += "<b class='hotel-name'>";
+    hotelData +=  hotel.name;
+    hotelData += "&nbsp" + "( " + hotel.location + ")";
+    hotelData +=  "</b>";
+    hotelData += "</div>";
+
+    hotelData += "<div class='panel-body' style='display:;' id='body-{{id}}'>";
+
+    hotelData += "<p> <b>Cost:</b> ";
+    hotelData += hotel.price;
+    hotelData += "</p>";
+
+    if (hotel.extras) {
+      hotelData += "<p> <b>Extras:</b>";
+      hotelData += "<ul>";
+    }
+
+    for (i in hotel.extras) {
+      hotelData += "<li>" + hotel.extras[i] + "</li>";
+    }
+
+    if (hotel.extras)
+      hotelData += "</ul></p>";      
+
+    hotelData += "<hr>";
+
+    hotelData += "<p> <b>Phone number:</b> ";
+    hotelData += hotel.phone;
+    // hotelData += "</p>";
+
+    if (hotel.tollfree) {
+      hotelData += " <b>Toll-free number:</b> ";
+      hotelData += hotel.tollfree;
+    }
+
+    if (hotel.fax) {
+      hotelData += " <b>Fax:</b> ";
+      hotelData += hotel.tollfree;
+    }
+
+    if (hotel.website) {
+      hotelData += " <b>Website:</b> ";
+      hotelData += "<a href='http://" + hotel.website + "'>" + hotel.website + "</a>";
+      hotelData += "</p>";
+    }
+
+    hotelData += "</div>";
+    
+    hotelData += "</div>";
+
+    console.log("that:");
+    console.log(that);
+
+    that.append(hotelData);
+  }
+
+
+}
+
+var hotels = [
+  {
+    name : "Visitor's Inn",
+    location : "649 Main St. W.",
+    phone : "(905) 529-6979",
+    tollfree : "1-800-387-4620 ",
+    website : "www.visitorsinn.com ",
+    price : "$45-48 /person/night",
+    extras : [
+      "Free parking",
+      "2 KM from University",
+      "Highly rated place for customer satisfaction",
+      "Indoor pool, restaurant"
+    ]
+  }, 
+  {
+    name : "Admiral Inn ",
+    location : "149 Dundurn St. N.",
+    phone : "(905) 529-2311",
+    tollfree : "866-236-4662",
+    fax : "(905) 529-9100",
+    website : "www.admiralinn.com",
+    price : "$42-45 /person/night",
+    extras : [
+      "Free parking",
+      "Opposite of historical Dundurn castle",
+      "Close to Bayfront Park/ Hamilton Harbour"
+    ]
+  }, 
+  {
+    name : "Day’s Inn",
+    location : "210 Main St. East",
+    phone : "(905) 528-3297",
+    website : "www.hamiltondaysinn.com/",
+    price : "$40-45 /person/night",
+    extras : [
+      "Limited free parking on-site",
+      "In downtown Hamilton",
+      "Reasonable price",
+      "Close to all amenities"
+    ]
+  }, 
+  {
+    name : "Holiday Inn Burlington Hotel & Conference Centre",
+    website : "www.hiburlington.ca/",
+    price : "$42-47 /person/night",
+    extras : [
+      "Free parking",
+      "Near main highway to Hamilton, and close to Niagara highway intersection",
+      "High customer rating"
+    ]
+  }
+];

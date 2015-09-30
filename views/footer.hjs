@@ -3,7 +3,7 @@
     <div class="footer-navbar" id="footernav-signup">
       <ul class="nav nav-pills nav-justified">
         <li role="presentation"><a href="#">Contact Us</a></li>
-        <li role="presentation"><a href="#">Campus Map</a></li>
+        <li role="presentation"><a href="/stays">Accommodation</a></li>
         <li role="presentation"><a href="https://facebook.com/mysukankanada">Like Us on Facebook</a></li>
         <!-- <li role="presentation"><div style="position:relative;width:10px;" id="fb-like" class="fb-like" data-href="https://facebook.com/mysukankanada/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div></li> -->
       </ul>
@@ -30,9 +30,11 @@
     <input id="is-createteam-page" name="isCreateTeamPage" type="hidden" value="{{isCreateTeamPage}}">
     <input id="is-team-page" name="isTeamPage" type="hidden" value="{{isTeamPage}}">
     <input id="is-schedule-page" name="isSchedulePage" type="hidden" value="{{isSchedulePage}}">
+    <input id="is-accommodation-page" name="isAccommodationPage" type="hidden" value="{{isAccommodationPage}}">
 
     <!-- import local jquer scripts -->
     <script type="text/javascript" src="/javascripts/footer.js"></script>
+    <!-- // <script type="text/javascript" src="/javascripts/show-accommodations.js"></script> -->
 
   </body>
 </html>

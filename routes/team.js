@@ -2,6 +2,7 @@
 exports.getTeams = getTeams;
 exports.createTeamGET = createTeamGET;
 exports.createTeamPOST = createTeamPOST;
+exports.joinTeam= joinTeam;
 // exports.getTeamMembers = getTeamMembers;
 
 
@@ -73,23 +74,59 @@ function createTeamPOST (req, res, next) {
 
 	// res.send(req.body);
 
-	// create new team
-	var team = new Team({
+	var user = req.session.user;
 
-		name : req.body.teamName,
-		game : req.body.game,
-		leader : req.body.leader,
-		code : req.body.teamCode,
-		members : [req.body.leader]
+	if (!user)
+		res.send("team leader: please login to create team");
+	else
+		// create new team
+		var team = new Team({
 
-	}).save(function (err) {
+			name : req.body.teamName,
+			game : req.body.game,
+			leader : req.body.leader,
+			code : req.body.teamCode,
+			members : [req.body.leader]
 
-		if (err)
-			res.send(err);
-		else
-			res.redirect('/teams');
+		}).save(function (err) {
 
-	});
+			if (err)
+				res.send(err);
+			else
+				res.redirect('/teams');
+
+		});
+}
+
+function joinTeam (req, res, next) {
+
+	var user = req.session.user;
+	var teamId = req.body.teamId;
+	var correctcode = req.body.correctcode;
+	var code = req.body.code;
+
+	if (!user)
+		res.send("please login to join teams");
+	else if (correctcode != code)
+		res.send("incorrect code. Contact the team leader for code");
+	else	
+		Team
+			.findById(teamId)
+			.exec(function (err, team) {
+				if (err)
+					res.send(err);
+				else if (team.members.indexOf(user._id) != -1)
+					res.send("you are already in the team");
+				 else {
+				 	team.members.push(user._id);
+				 	team.save(function (err) {
+				 		if (err)
+				 			res.send(err);
+				 		else
+				 			res.send("You've successfully joined the team! All the best for mysukan2015!");
+				 	});
+				 }
+			});
 }
 
 function getTeamMembers (req, res, next) {

@@ -1,0 +1,41 @@
+
+ {{>header}}
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">{{title}}</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+				<div class="panel panel-default main-container">
+				  <div class="panel-heading">
+					<span style="width:100%;left:15%;"> 
+						Join Us Now! &nbsp&nbsp 
+						<a href="/schedule">schedule</a>
+						&nbsp&nbsp 
+						<span style="color:red;">[new!] </span><a href="/stays">suggested accomodation</a>
+					</span>
+				  </div>
+
+				  <div class="panel-body hotel-background" style="">
+<!-- 				  	<div class="panel panel-default dummy-div" style="opacity:0">
+				  	</div>
+				  	<div class="panel panel-default game-container">	
+				  		<div class="panel-heading hotel-heading">
+				  			<b class="hotel-name">Hotel ABC</b>
+				  		</div>
+				  		<div class="panel-body" style="display:none;" id="body-{{id}}">
+				  			<p> -->
+				  			<!-- Details: <br> -->
+				  			<!-- bla3 zzzzz <br><br> -->
+
+<!-- 				  			</p>
+				  		</div>
+				  	</div> -->
+				  </div>
+
+				</div>
+		</div>
+	</div>
+
+
+
+{{>footer}}

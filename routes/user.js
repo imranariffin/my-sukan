@@ -18,15 +18,18 @@ function updateProfileGET (req, res, next) {
 	// if (!user)
 		// user = req.session.user;
 
-	res.render('update-profile', { 
-  		title: 'Update Profile',
-  		user : user,
-  		isUpdateprofilePage : true,
-  		partials : {
-  			header : 'header',
-  			footer : 'footer'
-  		}
-  	});
+	if (!user)
+		res.send("please sign to update profile");
+	else
+		res.render('update-profile', { 
+	  		title: 'Update Profile',
+	  		user : user,
+	  		isUpdateprofilePage : true,
+	  		partials : {
+	  			header : 'header',
+	  			footer : 'footer'
+	  		}
+	  	});
 }
 
 function updateProfilePOST (req, res, next) {

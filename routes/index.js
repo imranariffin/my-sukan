@@ -53,11 +53,13 @@ router.post('/update-profile', user.updateProfilePOST);
 router.get('/games', games.GET);
 router.get('/games/enrol', games.enrolGET);
 router.get('/schedule', games.schedule);
+router.get('/stays', accommodation);
 
 // ************ TEAMS ************ //
 router.get('/teams', team.getTeams);
 router.get('/create-team', team.createTeamGET);
 router.post('/create-team', team.createTeamPOST);
+router.post('/join', team.joinTeam);
 // router.get('/teams/get-members', team.getTeamMembers);
 
 /////////* INTERNAL API routes */////////////
@@ -158,6 +160,22 @@ function signout (req, res, next) {
 	res.redirect('/');
 }
 
+function accommodation (req, res, next) {
+
+	var user = req.session.user;
+	var page = "accommodation";
+
+	res.render(page, {
+		
+		user : user,
+
+		partials : {
+			header : "header",
+			footer : "footer"
+		},
+		isAccommodationPage : true
+	});
+}
 
 //////////////////////////////////////////////
 // !!!!!! important: only use once !!!!!!!! //

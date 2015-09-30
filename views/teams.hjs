@@ -42,6 +42,7 @@
 									<button type="button" class="btn btn-default" aria-label="Left Align">
 	  									<span class="glyphicon glyphicon-log-in join-team-btn" aria-hidden="true">&nbsp Join Team</span>
 									</button>
+									<input type="hidden" name="correctcode" value="{{code}}">
 									<input type="text" class="join-team-input" name="code" id="{{_id}}-code" placeholder="enter team code">
 									<input type="submit" class="join-team-input" value="join" style="border:1px solid #006;background: #9cf;">
 <!-- 									<div class="input-group">

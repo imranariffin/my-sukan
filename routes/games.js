@@ -22,13 +22,45 @@ function gamesGET (req, res, next) {
 	var page = 'games';
 	var title = 'Games';
 
-	if (req.session.user) {
-		User.findOne({email : req.session.user.email}, function (err, user) {
-			if (err) {
+	if (req.session.user)
+		User
+		.findOne({
+			email : req.session.user.email
+		})
+		.exec(function (err, user) {
+			if (err)
 				res.send(err);
-			} else if (user) {
-				res.render(page, { 
-					user : user,
+			else
+				Game
+				.find({ 
+					id : {
+						$nin : ["congkak"]
+					}
+				})
+				.exec(function (err, games) {
+					if (err)
+						res.send(err);
+					else
+						res.render(page, {
+							user : user,
+							title : title,
+							isGamesPage : true,
+							games : games,
+							partials : {
+								header : 'header',
+								footer : 'footer'
+							}
+						});
+				});
+		});
+	else
+		Game
+		.find({})
+		.exec(function (err, games) {
+			if (err)
+				res.send(err);
+			else
+				res.render(page, {
 					title : title,
 					isGamesPage : true,
 					games : games,
@@ -37,29 +69,46 @@ function gamesGET (req, res, next) {
 						footer : 'footer'
 					}
 				});
-			} else {
-				res.render(page, { 
-					title : title,
-					isGamesPage : true,
-					games : games,
-					partials : {
-						header : 'header',
-						footer : 'footer'
-					}
-				});
-			}
 		});
-	} else {
-		res.render(page, { 
-			title : title,
-			isGamesPage : true,
-			games : games,
-			partials : {
-				header : 'header',
-				footer : 'footer'
-			}
-		});
-	}
+}
+		// User.findOne({email : req.session.user.email}
+	// 		, function (err, user) {
+	// 		if (err) {
+	// 			res.send(err);
+	// 		} else if (user) {
+	// 			res.render(page, { 
+	// 				user : user,
+	// 				title : title,
+	// 				isGamesPage : true,
+	// 				games : games,
+	// 				partials : {
+	// 					header : 'header',
+	// 					footer : 'footer'
+	// 				}
+	// 			});
+	// 		} else {
+	// 			res.render(page, { 
+	// 				title : title,
+	// 				isGamesPage : true,
+	// 				games : games,
+	// 				partials : {
+	// 					header : 'header',
+	// 					footer : 'footer'
+	// 				}
+	// 			});
+	// 		}
+	// 	});
+	// } else {
+	// 	res.render(page, { 
+	// 		title : title,
+	// 		isGamesPage : true,
+	// 		games : games,
+	// 		partials : {
+	// 			header : 'header',
+	// 			footer : 'footer'
+	// 		}
+	// 	});
+	// }
 
 	// res.render('games', {
 	// 	title : 'Games',
@@ -69,7 +118,7 @@ function gamesGET (req, res, next) {
 	// 		footer : 'footer'
 	// 	}
 	// });
-}
+// }
 
 function enrolGET (req, res, next) {
 
