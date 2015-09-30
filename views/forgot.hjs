@@ -1,0 +1,42 @@
+
+ {{>header}}
+
+ 	<div>
+ 		<br><br><br>
+	  	<p style="font-size:35px;text-align:center;color:purple;">Forgot Password?</p>
+	  	<!-- <br> -->
+		<div id="main-div" style="width:65%;position:relative;left:17.5%;">
+			<form action="/forgot" method="POST">
+			    <!-- csrf for security -->
+	        	<input type="hidden" id="school-id" name="_csrf" value="crsfToken">
+
+				<div class="panel panel-default" style="width:65%;position:absolute;;left:17.5%;opacity:0.85;">
+				  <div class="panel-heading">
+					<span style="width:70%;left:15%;"> Send Reset Email</span>
+				  </div>
+				  <div class="panel-body" style="opacity:1;">
+				  	<!-- user email -->
+		            <div class="input-group" style="width:70%;left:15%;opacity:1;">
+		              <span class="input-group-addon" id="basic-addon1">@</span>
+		              <input name="email" type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+		            </div>
+		            <br>
+
+					<div class="input-group" style="width:60%;left:20%;">
+				    </div>
+				    <div class="input-group" style="width:50%;left:37.5%;">
+				    	<br>
+				    	<!-- or  -->
+				    	<!-- <input class="btn btn-default" style="width:inherit;" type="submit" value="I'm Ready!"> -->
+				    	<!-- <a href="/auth/facebook" style="text-decoration:none;"><img id="fb-login" style="width:50%" src="/images/fb-login.png"> </a> -->
+				    	<!-- <br><br><br> -->
+				    </div>
+				  </div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{{>footer}}
+
+

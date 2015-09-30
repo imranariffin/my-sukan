@@ -21,5 +21,9 @@ module.exports = {
 	'twitter' : {
 		'consumerKey' : 'VidKk5Rk8mCQswnS55gwvWFqU',
 		'consumerSecret' : 'tCUiynOQYgY793ssFQWrIzIx2CfIAwhgiO08EptA1lFIFzmcrM'
-	}
+	},
+	'nodemailer' : {
+        user: 'ariffinimran@gmail.com',
+        pass: 'katakuncibaru1993'
+	 }
 };

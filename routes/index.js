@@ -31,6 +31,10 @@ router.post('/signin',
 	signin.POST);
 /* GET: user logs out */
 router.get('/logout', signout);
+router.get('/forgot', user.forgotPassword);
+router.post('/forgot', user.forgotPasswordPOST);
+router.get('/reset/:resetToken', user.resetPage);
+router.post('/reset', user.reset);
 
 /* GET: user updates profile or completes registration */
 router.get('/update-profile', user.updateProfileGET);

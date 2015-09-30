@@ -32,7 +32,10 @@ var User = mongoose.model('User', new Schema ({
 			type : String,
 			default : false
 		}
-	}
+	},
+
+	// reset
+	resetToken : String
 	
 }));
 
