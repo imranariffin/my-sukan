@@ -33,7 +33,9 @@ function updateProfileGET (req, res, next) {
 		res.render('update-profile', { 
 	  		title: 'Update Profile',
 	  		user : user,
-	  		isUpdateprofilePage : true,
+
+	  		isUpdateProfilePage : true,
+
 	  		partials : {
 	  			header : 'header',
 	  			footer : 'footer'
@@ -230,4 +232,3 @@ function validateReset (req, res, next) {
 				}
 			});
 }
-

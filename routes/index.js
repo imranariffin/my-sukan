@@ -73,6 +73,7 @@ router.get('/is-user-a-team-member', apis.isUserATeamMember);
 router.get('/get-teams', apis.getTeams);
 router.get('/api/get-team-member-names', apis.getTeamMembers);
 router.get('/api/get-games', apis.getGames);
+router.get('/api/get-school-name', apis.getSchoolName);
 
 /////////* TWITTER API routes */////////////
 

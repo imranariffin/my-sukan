@@ -31,6 +31,7 @@
     <input id="is-team-page" name="isTeamPage" type="hidden" value="{{isTeamPage}}">
     <input id="is-schedule-page" name="isSchedulePage" type="hidden" value="{{isSchedulePage}}">
     <input id="is-accommodation-page" name="isAccommodationPage" type="hidden" value="{{isAccommodationPage}}">
+    <input id="is-updateprofile-page" name="isUpdateProfilePage" type="hidden" value="{{isUpdateProfilePage}}">
 
     <!-- import local jquer scripts -->
     <script type="text/javascript" src="/javascripts/footer.js"></script>

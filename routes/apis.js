@@ -10,6 +10,7 @@ exports.isUserATeamMember = isUserATeamMember;
 exports.getTeams = getTeams;
 exports.getTeamMembers = getTeamMemberNames;
 exports.getGames = getGames;
+exports.getSchoolName = getSchoolName;
 
 ///////////////////////////////////////////
 /////// api middleware definitions ////////
@@ -109,4 +110,17 @@ function getGames (req, res, next) {
 			else
 				res.send(games);
 		});
+}
+
+function getSchoolName (req, res, next) {
+
+	var user = req.session.user;
+	var schoolId = user.school;
+
+	School
+		.findOne({ _id : schoolId })
+		.exec(function (err, school) {
+			res.send({schoolName : school.name});
+		});
+
 }

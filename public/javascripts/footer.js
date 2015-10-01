@@ -72,6 +72,12 @@ $(function () {
   else
     isAccommodationPage = false;
 
+  var isUpdateProfilePage = $('#is-updateprofile-page').val();
+  if (isUpdateProfilePage == 'true')
+    isUpdateProfilePage = true;
+  else
+    isUpdateProfilePage = false;
+
 
   console.log("$('#section-3').height():");
   console.log($('#section-3').height());
@@ -828,6 +834,23 @@ $(function () {
       // 'background-repeat' : 'no-repeat'
     });
 
+  }
+  
+  if (isUpdateProfilePage) {
+
+    console.log("isUpdateProfilePage");
+
+    $.ajax({
+      url : '/api/get-school-name',
+      success : function (response) {
+        console.log("schoolName: " + response.schoolName);
+        $("#school").val(response.schoolName);
+      },
+      error : function (err) {
+        console.log(err);
+      },
+      dataType : 'json'
+    })
   }
 
 });
