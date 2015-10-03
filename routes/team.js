@@ -17,6 +17,8 @@ function getTeams (req, res, next) {
 	var title = 'Teams';
 	var user = req.session.user;
 
+	console.log(title);
+
 	Team.find({}, function (err, teams) {
 		if (err)
 			res.send(err);
