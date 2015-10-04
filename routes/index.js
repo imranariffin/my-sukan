@@ -74,6 +74,7 @@ router.get('/get-teams', apis.getTeams);
 router.get('/api/get-team-member-names', apis.getTeamMembers);
 router.get('/api/get-games', apis.getGames);
 router.get('/api/get-school-name', apis.getSchoolName);
+router.post('/api/delete-team', apis.deleteTeam);
 
 /////////* TWITTER API routes */////////////
 
@@ -187,3 +188,4 @@ function accommodation (req, res, next) {
 //////////////////////////////////////////////
 
 // router.post('/update-games', games.updateAllGames);
+

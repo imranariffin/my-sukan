@@ -788,14 +788,63 @@ $(function () {
           // unhide span-joined
           if (response.response)
             $('#joined-'+teamId).show();
-          if (response.isLeader)
-            $('#showcode-'+teamId).show();
+          if (response.isLeader) {
+            $('#showcode-'+teamId).show(700);
+            $('#delete-team-'+teamId).show(700);
+            // $('#delete-sure-'+teamId).show();
+          }
 
         },
         error : function (err) {
           console.log(err);
         },
         dataType : 'json'
+      });
+    });
+
+    // delete a team
+    $(".delete-team").click(function (event) {
+      var targetId = event.target.id;
+      console.log('sure? ' + targetId);
+
+      var teamId = targetId.slice("delete-team-".length, targetId.length);
+
+      $('#delete-sure-' + teamId).show(300);
+    });
+
+    $(".delete-sure").click(function (event) {
+      var targetId = event.target.id;
+      var teamId = targetId.slice("delete-sure-".length, targetId.length);
+      console.log('deleting ' + teamId);
+
+      $.ajax({
+        url : '/api/delete-team',
+        method : "POST",
+        data : {
+          teamId : teamId
+        },
+        success : function (response) {
+          var status = response.status;
+
+          console.log("response.status: " + response.status);
+
+          if (status == "OK") {
+            console.log("hide team view: " + teamId);
+            var team = $("#" + teamId);
+            team.hide(1000);
+          }
+        },
+        error : function (err) {
+          console.log(err);
+        },
+        dataType : 'json'
+      });
+
+    });
+
+    $(".delete-team, .delete-sure").mouseover(function () {
+      $(this).css({
+        'cursor' : 'pointer'
       });
     });
 

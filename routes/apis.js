@@ -11,6 +11,7 @@ exports.getTeams = getTeams;
 exports.getTeamMembers = getTeamMemberNames;
 exports.getGames = getGames;
 exports.getSchoolName = getSchoolName;
+exports.deleteTeam = deleteTeam;
 
 ///////////////////////////////////////////
 /////// api middleware definitions ////////
@@ -123,4 +124,23 @@ function getSchoolName (req, res, next) {
 			res.send({schoolName : school.name});
 		});
 
+}
+
+function deleteTeam (req, res, next) {
+
+	var teamId = req.body.teamId;
+
+	Team.findById(teamId, function (err, team) {
+		if (err)
+			res.send(err);
+		else
+			team.remove(function () {
+				if (err)
+					res.send(err);
+				else
+					res.send({
+						status : "OK"
+					});
+			});
+	});
 }

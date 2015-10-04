@@ -27,6 +27,13 @@
 						  			<span class="showcode" id="showcode-{{_id}}" style="color:blue;display:none;">
 						  				code: {{code}}
 						  			</span>
+						  			<span class="delete-team" id="delete-team-{{_id}}" style="color:red;display:none;background-color:grey;">
+						  				&nbsp DELETE TEAM &nbsp
+						  			</span>
+						  			<span>&nbsp&nbsp</span>
+						  			<span class="delete-sure" id="delete-sure-{{_id}}" style="color:white;display:none;background-color:red;">
+						  				&nbsp SURE?
+						  			</span>
 								<br>
 						  		<b>Team leader:</b> 		
 						  			<span class="leaders">
