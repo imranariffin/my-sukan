@@ -809,7 +809,7 @@ $(function () {
 
       var teamId = targetId.slice("delete-team-".length, targetId.length);
 
-      $('#delete-sure-' + teamId).show(300);
+      $('#delete-sure-' + teamId).toggle(300);
     });
 
     $(".delete-sure").click(function (event) {
