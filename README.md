@@ -8,7 +8,11 @@ Official website My Sukan 2016, an annual sporting event gathering Malaysian stu
 ![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/mysukan-teams.png)
 
 ##View List of Games
-![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/msukan-games.png)
+![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/mysukan-games.png)
 
 ##View Game Details
-![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/msukan-games-2.png)
+![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/mysukan-games-2.png)
+
+##Sign Up using Facebook or Local
+![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/mysukan-signup.png)
+![tag](https://raw.githubusercontent.com/imranariffin/my-sukan-2016/master/img/mysukan-signup-2.png)
